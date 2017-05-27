@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1
+-- version 4.4.15.5
 -- http://www.phpmyadmin.net
 --
--- Хост: localhost
--- Время создания: Май 27 2017 г., 16:46
--- Версия сервера: 5.6.33-79.0-log
--- Версия PHP: 5.6.30-pl0-gentoo
+-- Хост: 127.0.0.1:3306
+-- Время создания: Май 27 2017 г., 17:28
+-- Версия сервера: 5.5.48
+-- Версия PHP: 5.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -26,9 +26,9 @@ SET time_zone = "+00:00";
 -- Структура таблицы `wp_commentmeta`
 --
 
-CREATE TABLE `wp_commentmeta` (
-  `meta_id` bigint(20) UNSIGNED NOT NULL,
-  `comment_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `wp_commentmeta` (
+  `meta_id` bigint(20) unsigned NOT NULL,
+  `comment_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) DEFAULT NULL,
   `meta_value` longtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -39,9 +39,9 @@ CREATE TABLE `wp_commentmeta` (
 -- Структура таблицы `wp_comments`
 --
 
-CREATE TABLE `wp_comments` (
-  `comment_ID` bigint(20) UNSIGNED NOT NULL,
-  `comment_post_ID` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `wp_comments` (
+  `comment_ID` bigint(20) unsigned NOT NULL,
+  `comment_post_ID` bigint(20) unsigned NOT NULL DEFAULT '0',
   `comment_author` tinytext NOT NULL,
   `comment_author_email` varchar(100) NOT NULL DEFAULT '',
   `comment_author_url` varchar(200) NOT NULL DEFAULT '',
@@ -53,16 +53,16 @@ CREATE TABLE `wp_comments` (
   `comment_approved` varchar(20) NOT NULL DEFAULT '1',
   `comment_agent` varchar(255) NOT NULL DEFAULT '',
   `comment_type` varchar(20) NOT NULL DEFAULT '',
-  `comment_parent` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
-  `user_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `comment_parent` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `user_id` bigint(20) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `wp_comments`
 --
 
 INSERT INTO `wp_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, `comment_author_email`, `comment_author_url`, `comment_author_IP`, `comment_date`, `comment_date_gmt`, `comment_content`, `comment_karma`, `comment_approved`, `comment_agent`, `comment_type`, `comment_parent`, `user_id`) VALUES
-(1, 1, 'Автор комментария', 'wapuu@wordpress.example', 'https://wordpress.org/', '', '2017-05-27 14:39:21', '2017-05-27 11:39:21', 'Привет! Это комментарий.\nЧтобы начать модерировать, редактировать и удалять комментарии, перейдите на экран «Комментарии» в консоли.\nАватары авторов комментариев загружаются с сервиса <a href="https://ru.gravatar.com">Gravatar</a>.', 0, '1', '', '', 0, 0);
+(1, 1, 'Автор комментария', 'wapuu@wordpress.example', 'https://wordpress.org/', '', '2017-05-27 17:22:15', '2017-05-27 14:22:15', 'Привет! Это комментарий.\nЧтобы начать модерировать, редактировать и удалять комментарии, перейдите на экран «Комментарии» в консоли.\nАватары авторов комментариев загружаются с сервиса <a href="https://ru.gravatar.com">Gravatar</a>.', 0, '1', '', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -70,15 +70,15 @@ INSERT INTO `wp_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, `c
 -- Структура таблицы `wp_links`
 --
 
-CREATE TABLE `wp_links` (
-  `link_id` bigint(20) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `wp_links` (
+  `link_id` bigint(20) unsigned NOT NULL,
   `link_url` varchar(255) NOT NULL DEFAULT '',
   `link_name` varchar(255) NOT NULL DEFAULT '',
   `link_image` varchar(255) NOT NULL DEFAULT '',
   `link_target` varchar(25) NOT NULL DEFAULT '',
   `link_description` varchar(255) NOT NULL DEFAULT '',
   `link_visible` varchar(20) NOT NULL DEFAULT 'Y',
-  `link_owner` bigint(20) UNSIGNED NOT NULL DEFAULT '1',
+  `link_owner` bigint(20) unsigned NOT NULL DEFAULT '1',
   `link_rating` int(11) NOT NULL DEFAULT '0',
   `link_updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `link_rel` varchar(255) NOT NULL DEFAULT '',
@@ -92,24 +92,24 @@ CREATE TABLE `wp_links` (
 -- Структура таблицы `wp_options`
 --
 
-CREATE TABLE `wp_options` (
-  `option_id` bigint(20) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `wp_options` (
+  `option_id` bigint(20) unsigned NOT NULL,
   `option_name` varchar(191) NOT NULL DEFAULT '',
   `option_value` longtext NOT NULL,
   `autoload` varchar(20) NOT NULL DEFAULT 'yes'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=138 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `wp_options`
 --
 
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
-(1, 'siteurl', 'neftehim2.loc', 'yes'),
-(2, 'home', 'neftehim2.loc', 'yes'),
-(3, 'blogname', 'neftehim2.loc', 'yes'),
+(1, 'siteurl', 'http://neftehim2.loc', 'yes'),
+(2, 'home', 'http://neftehim2.loc', 'yes'),
+(3, 'blogname', 'neftehim', 'yes'),
 (4, 'blogdescription', 'Ещё один сайт на WordPress', 'yes'),
 (5, 'users_can_register', '0', 'yes'),
-(6, 'admin_email', '23123@mail.ru', 'yes'),
+(6, 'admin_email', '2312312@mail.ru', 'yes'),
 (7, 'start_of_week', '1', 'yes'),
 (8, 'use_balanceTags', '0', 'yes'),
 (9, 'use_smilies', '1', 'yes'),
@@ -136,7 +136,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (30, 'hack_file', '0', 'yes'),
 (31, 'blog_charset', 'UTF-8', 'yes'),
 (32, 'moderation_keys', '', 'no'),
-(33, 'active_plugins', 'a:1:{i:0;s:30:"advanced-custom-fields/acf.php";}', 'yes'),
+(33, 'active_plugins', 'a:0:{}', 'yes'),
 (34, 'category_base', '', 'yes'),
 (35, 'ping_sites', 'http://rpc.pingomatic.com/', 'yes'),
 (36, 'comment_max_links', '2', 'yes'),
@@ -208,38 +208,37 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (102, 'widget_calendar', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (103, 'widget_tag_cloud', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (104, 'widget_nav_menu', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
-(105, 'cron', 'a:3:{i:1495928361;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1495971969;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
-(106, 'nonce_key', 'Z;w:gW55KXU1|52`pa#7~@[:0tIQ>qLy}Q61b4FU]?Y(V^ok<D_AzO4p[$]1v^Xg', 'no'),
-(107, 'nonce_salt', '2[[4@D^2O[}x@x0KHA$W-@!^vJO}G<7]ULSrQMTb;fx@&6AY%_!$#<1EWJN>;%T5', 'no'),
+(105, 'cron', 'a:3:{i:1495894935;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1495894967;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
+(106, 'nonce_key', '0?F924,}qH<4~9/YfSq]Wn<S*ylg8x!IcThl=;2rR7n@YT^;##DgW/NriibiIF)@', 'no'),
+(107, 'nonce_salt', 'IRT~6 Ja4X8=5-[{k]`8pM/wa>~cux7taEv;e&hhrq1}gB_#Zq:4FM4Fv4v(l[u!', 'no'),
 (108, 'theme_mods_twentyseventeen', 'a:1:{s:18:"custom_css_post_id";i:-1;}', 'yes'),
-(115, '_site_transient_timeout_theme_roots', '1495886967', 'no'),
-(116, '_site_transient_theme_roots', 'a:3:{s:13:"twentyfifteen";s:7:"/themes";s:15:"twentyseventeen";s:7:"/themes";s:13:"twentysixteen";s:7:"/themes";}', 'no'),
-(118, 'auth_key', 'f^o9%tQ, KuWZ+-75TGU<<4R8m%[axeI:H)~J<NIDDf3ytx<!Om<# Tj&nG[7v7N', 'no'),
-(119, 'auth_salt', 'hHUVu+p^M](Uj[6 W`h|w|Y29VQ{+n-S2|G8ChpQv7:,>DMnUwGM4G/G5iZ!ZlCM', 'no'),
-(120, 'logged_in_key', '_{]bd&iB3H-BnKytY/v-_|V`oXbPmQFZ9(stmYmGOY|?,VBMMVP~?4RBK.lq_RYj', 'no'),
-(121, 'logged_in_salt', 'ImMlRD[uKV9?~6J|=}<4M.ixpJ4ki[RiTNT9cs2O/<dJbCv];9I}RG?a/YPr0DRo', 'no'),
-(122, '_site_transient_update_core', 'O:8:"stdClass":4:{s:7:"updates";a:1:{i:0;O:8:"stdClass":10:{s:8:"response";s:6:"latest";s:8:"download";s:65:"https://downloads.wordpress.org/release/ru_RU/wordpress-4.7.5.zip";s:6:"locale";s:5:"ru_RU";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:65:"https://downloads.wordpress.org/release/ru_RU/wordpress-4.7.5.zip";s:10:"no_content";b:0;s:11:"new_bundled";b:0;s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"4.7.5";s:7:"version";s:5:"4.7.5";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.7";s:15:"partial_version";s:0:"";}}s:12:"last_checked";i:1495885763;s:15:"version_checked";s:5:"4.7.5";s:12:"translations";a:0:{}}', 'no'),
+(111, 'logged_in_key', 'X`#X&4]h~i/Xc#-O_JMs:8UPy)tU+H&jEz[&fLR9=.W.Zm6]QNv3&A1A^m;s: xT', 'no'),
+(112, 'logged_in_salt', '+&gfXrvqs-PA,X,nhbYV},1Dt/U_nt+f$M83idB]9o&0Cv+vHxj0jhz+uLn[lb1~', 'no'),
+(113, '_transient_doing_cron', '1495895276.6544110774993896484375', 'yes'),
+(114, 'auth_key', 'v9#wh>k^oS[Ua$%E4i]jisn ^^.28S7(S@{bxTQrw:d6d76E{a}?;edd1gp:]p/h', 'no'),
+(115, 'auth_salt', '!*[o}k+-YK[1`*XBWAlOhnDE9#_Z?&6GHHzFXb7~7mVIrA):CGS= {kb2@!bSt+J', 'no'),
+(116, '_site_transient_update_core', 'O:8:"stdClass":3:{s:7:"updates";a:0:{}s:15:"version_checked";s:5:"4.7.5";s:12:"last_checked";i:1495894967;}', 'no'),
+(117, '_site_transient_update_plugins', 'O:8:"stdClass":4:{s:12:"last_checked";i:1495894969;s:8:"response";a:0:{}s:12:"translations";a:1:{i:0;a:7:{s:4:"type";s:6:"plugin";s:4:"slug";s:7:"akismet";s:8:"language";s:5:"ru_RU";s:7:"version";s:5:"3.3.2";s:7:"updated";s:19:"2017-05-04 14:34:37";s:7:"package";s:74:"https://downloads.wordpress.org/translation/plugin/akismet/3.3.2/ru_RU.zip";s:10:"autoupdate";b:1;}}s:9:"no_update";a:2:{s:19:"akismet/akismet.php";O:8:"stdClass":6:{s:2:"id";s:2:"15";s:4:"slug";s:7:"akismet";s:6:"plugin";s:19:"akismet/akismet.php";s:11:"new_version";s:5:"3.3.2";s:3:"url";s:38:"https://wordpress.org/plugins/akismet/";s:7:"package";s:56:"https://downloads.wordpress.org/plugin/akismet.3.3.2.zip";}s:9:"hello.php";O:8:"stdClass":6:{s:2:"id";s:4:"3564";s:4:"slug";s:11:"hello-dolly";s:6:"plugin";s:9:"hello.php";s:11:"new_version";s:3:"1.6";s:3:"url";s:42:"https://wordpress.org/plugins/hello-dolly/";s:7:"package";s:58:"https://downloads.wordpress.org/plugin/hello-dolly.1.6.zip";}}}', 'no'),
+(118, '_site_transient_timeout_theme_roots', '1495896771', 'no'),
+(119, '_site_transient_theme_roots', 'a:4:{s:8:"neftehim";s:7:"/themes";s:13:"twentyfifteen";s:7:"/themes";s:15:"twentyseventeen";s:7:"/themes";s:13:"twentysixteen";s:7:"/themes";}', 'no'),
+(120, '_site_transient_update_themes', 'O:8:"stdClass":4:{s:12:"last_checked";i:1495894973;s:7:"checked";a:4:{s:8:"neftehim";s:0:"";s:13:"twentyfifteen";s:3:"1.7";s:15:"twentyseventeen";s:3:"1.2";s:13:"twentysixteen";s:3:"1.3";}s:8:"response";a:0:{}s:12:"translations";a:3:{i:0;a:7:{s:4:"type";s:5:"theme";s:4:"slug";s:13:"twentyfifteen";s:8:"language";s:5:"ru_RU";s:7:"version";s:3:"1.7";s:7:"updated";s:19:"2015-08-18 16:52:11";s:7:"package";s:77:"https://downloads.wordpress.org/translation/theme/twentyfifteen/1.7/ru_RU.zip";s:10:"autoupdate";b:1;}i:1;a:7:{s:4:"type";s:5:"theme";s:4:"slug";s:15:"twentyseventeen";s:8:"language";s:5:"ru_RU";s:7:"version";s:3:"1.0";s:7:"updated";s:19:"2017-01-04 07:50:34";s:7:"package";s:79:"https://downloads.wordpress.org/translation/theme/twentyseventeen/1.0/ru_RU.zip";s:10:"autoupdate";b:1;}i:2;a:7:{s:4:"type";s:5:"theme";s:4:"slug";s:13:"twentysixteen";s:8:"language";s:5:"ru_RU";s:7:"version";s:3:"1.3";s:7:"updated";s:19:"2015-12-08 08:43:28";s:7:"package";s:77:"https://downloads.wordpress.org/translation/theme/twentysixteen/1.3/ru_RU.zip";s:10:"autoupdate";b:1;}}}', 'no'),
+(121, '_site_transient_timeout_browser_48f918c1c3741dff2bafcf39a1a38742', '1496499773', 'no'),
+(122, '_site_transient_browser_48f918c1c3741dff2bafcf39a1a38742', 'a:9:{s:8:"platform";s:7:"Windows";s:4:"name";s:6:"Chrome";s:7:"version";s:13:"58.0.3029.110";s:10:"update_url";s:28:"http://www.google.com/chrome";s:7:"img_src";s:49:"http://s.wordpress.org/images/browsers/chrome.png";s:11:"img_src_ssl";s:48:"https://wordpress.org/images/browsers/chrome.png";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'no'),
 (123, 'can_compress_scripts', '1', 'no'),
-(124, '_site_transient_update_themes', 'O:8:"stdClass":4:{s:12:"last_checked";i:1495885766;s:7:"checked";a:3:{s:13:"twentyfifteen";s:3:"1.7";s:15:"twentyseventeen";s:3:"1.2";s:13:"twentysixteen";s:3:"1.3";}s:8:"response";a:0:{}s:12:"translations";a:0:{}}', 'no'),
-(125, '_transient_timeout_feed_ac0b00fe65abe10e0c5b588f3ed8c7ca', '1495928379', 'no'),
-(126, '_transient_timeout_feed_mod_ac0b00fe65abe10e0c5b588f3ed8c7ca', '1495928379', 'no'),
-(127, '_transient_feed_mod_ac0b00fe65abe10e0c5b588f3ed8c7ca', '1495885179', 'no'),
-(129, '_transient_timeout_feed_d117b5738fbd35bd8c0391cda1f2b5d9', '1495928381', 'no'),
-(130, '_transient_timeout_feed_mod_d117b5738fbd35bd8c0391cda1f2b5d9', '1495928381', 'no'),
-(131, '_transient_feed_mod_d117b5738fbd35bd8c0391cda1f2b5d9', '1495885181', 'no'),
-(132, '_transient_timeout_feed_b9388c83948825c1edaef0d856b7b109', '1495928385', 'no'),
-(133, '_transient_timeout_feed_mod_b9388c83948825c1edaef0d856b7b109', '1495928386', 'no'),
-(134, '_transient_feed_mod_b9388c83948825c1edaef0d856b7b109', '1495885186', 'no'),
-(135, '_transient_timeout_plugin_slugs', '1495972173', 'no'),
-(136, '_transient_plugin_slugs', 'a:3:{i:0;s:30:"advanced-custom-fields/acf.php";i:1;s:19:"akismet/akismet.php";i:2;s:9:"hello.php";}', 'no'),
-(137, '_transient_timeout_dash_f69de0bbfe7eaa113146875f40c02000', '1495928386', 'no'),
-(138, '_transient_dash_f69de0bbfe7eaa113146875f40c02000', '<div class="rss-widget"><ul><li><a class=\'rsswidget\' href=\'https://wordpress.org/news/2017/05/wordpress-4-8-release-candidate/\'>WordPress 4.8 Release Candidate</a> <span class="rss-date">25.05.2017</span><div class="rssSummary">The release candidate for WordPress 4.8 is now available. RC means we think we’re done, but with millions of users and thousands of plugins and themes, it’s possible we’ve missed something. We hope to ship WordPress 4.8 on Thursday, June 8, but we need your help to get there. If you haven’t tested 4.8 yet, [&hellip;]</div></li></ul></div><div class="rss-widget"><ul><li><a class=\'rsswidget\' href=\'https://wptavern.com/in-case-you-missed-it-issue-20\'>WPTavern: In Case You Missed It – Issue 20</a></li><li><a class=\'rsswidget\' href=\'https://wptavern.com/wordpress-removes-hhvm-from-testing-infrastructure\'>WPTavern: WordPress Removes HHVM from Testing Infrastructure</a></li><li><a class=\'rsswidget\' href=\'https://wptavern.com/rainmaker-digital-to-partner-with-nimble-worldwide\'>WPTavern: Rainmaker Digital to Partner with Nimble Worldwide</a></li></ul></div><div class="rss-widget"><ul><li class="dashboard-news-plugin"><span>Популярный плагин:</span> Jetpack by WordPress.com&nbsp;<a href="plugin-install.php?tab=plugin-information&amp;plugin=jetpack&amp;_wpnonce=1aff2ac2c5&amp;TB_iframe=true&amp;width=600&amp;height=800" class="thickbox open-plugin-details-modal" aria-label="Установить Jetpack by WordPress.com">(Установить)</a></li></ul></div>', 'no'),
-(140, '_site_transient_timeout_wporg_theme_feature_list', '1495896425', 'no'),
-(141, '_site_transient_wporg_theme_feature_list', 'a:0:{}', 'no'),
-(142, '_transient_is_multi_author', '0', 'yes'),
-(143, 'recently_activated', 'a:0:{}', 'yes'),
-(145, '_site_transient_update_plugins', 'O:8:"stdClass":5:{s:12:"last_checked";i:1495885771;s:7:"checked";a:3:{s:30:"advanced-custom-fields/acf.php";s:6:"4.4.11";s:19:"akismet/akismet.php";s:5:"3.3.2";s:9:"hello.php";s:3:"1.6";}s:8:"response";a:0:{}s:12:"translations";a:0:{}s:9:"no_update";a:3:{s:30:"advanced-custom-fields/acf.php";O:8:"stdClass":6:{s:2:"id";s:36:"w.org/plugins/advanced-custom-fields";s:4:"slug";s:22:"advanced-custom-fields";s:6:"plugin";s:30:"advanced-custom-fields/acf.php";s:11:"new_version";s:6:"4.4.11";s:3:"url";s:53:"https://wordpress.org/plugins/advanced-custom-fields/";s:7:"package";s:72:"https://downloads.wordpress.org/plugin/advanced-custom-fields.4.4.11.zip";}s:19:"akismet/akismet.php";O:8:"stdClass":6:{s:2:"id";s:21:"w.org/plugins/akismet";s:4:"slug";s:7:"akismet";s:6:"plugin";s:19:"akismet/akismet.php";s:11:"new_version";s:5:"3.3.2";s:3:"url";s:38:"https://wordpress.org/plugins/akismet/";s:7:"package";s:56:"https://downloads.wordpress.org/plugin/akismet.3.3.2.zip";}s:9:"hello.php";O:8:"stdClass":6:{s:2:"id";s:25:"w.org/plugins/hello-dolly";s:4:"slug";s:11:"hello-dolly";s:6:"plugin";s:9:"hello.php";s:11:"new_version";s:3:"1.6";s:3:"url";s:42:"https://wordpress.org/plugins/hello-dolly/";s:7:"package";s:58:"https://downloads.wordpress.org/plugin/hello-dolly.1.6.zip";}}}', 'no'),
-(146, 'acf_version', '4.4.11', 'yes');
+(124, '_transient_timeout_feed_ac0b00fe65abe10e0c5b588f3ed8c7ca', '1495938177', 'no'),
+(125, '_transient_timeout_feed_mod_ac0b00fe65abe10e0c5b588f3ed8c7ca', '1495938177', 'no'),
+(126, '_transient_feed_mod_ac0b00fe65abe10e0c5b588f3ed8c7ca', '1495894977', 'no'),
+(127, '_transient_timeout_feed_d117b5738fbd35bd8c0391cda1f2b5d9', '1495938181', 'no'),
+(128, '_transient_timeout_feed_mod_d117b5738fbd35bd8c0391cda1f2b5d9', '1495938181', 'no'),
+(129, '_transient_feed_mod_d117b5738fbd35bd8c0391cda1f2b5d9', '1495894981', 'no'),
+(130, '_transient_timeout_feed_b9388c83948825c1edaef0d856b7b109', '1495938189', 'no'),
+(131, '_transient_timeout_feed_mod_b9388c83948825c1edaef0d856b7b109', '1495938189', 'no'),
+(132, '_transient_feed_mod_b9388c83948825c1edaef0d856b7b109', '1495894989', 'no'),
+(133, '_transient_timeout_plugin_slugs', '1495981389', 'no'),
+(134, '_transient_plugin_slugs', 'a:2:{i:0;s:19:"akismet/akismet.php";i:1;s:9:"hello.php";}', 'no'),
+(135, '_transient_timeout_dash_f69de0bbfe7eaa113146875f40c02000', '1495938189', 'no'),
+(136, '_transient_dash_f69de0bbfe7eaa113146875f40c02000', '<div class="rss-widget"><ul><li><a class=''rsswidget'' href=''https://wordpress.org/news/2017/05/wordpress-4-8-release-candidate/''>WordPress 4.8 Release Candidate</a> <span class="rss-date">25.05.2017</span><div class="rssSummary">The release candidate for WordPress 4.8 is now available. RC means we think we’re done, but with millions of users and thousands of plugins and themes, it’s possible we’ve missed something. We hope to ship WordPress 4.8 on Thursday, June 8, but we need your help to get there. If you haven’t tested 4.8 yet, [&hellip;]</div></li></ul></div><div class="rss-widget"><ul><li><a class=''rsswidget'' href=''https://wptavern.com/in-case-you-missed-it-issue-20''>WPTavern: In Case You Missed It – Issue 20</a></li><li><a class=''rsswidget'' href=''https://wptavern.com/wordpress-removes-hhvm-from-testing-infrastructure''>WPTavern: WordPress Removes HHVM from Testing Infrastructure</a></li><li><a class=''rsswidget'' href=''https://wptavern.com/rainmaker-digital-to-partner-with-nimble-worldwide''>WPTavern: Rainmaker Digital to Partner with Nimble Worldwide</a></li></ul></div><div class="rss-widget"><ul><li class="dashboard-news-plugin"><span>Популярный плагин:</span> WooCommerce&nbsp;<a href="plugin-install.php?tab=plugin-information&amp;plugin=woocommerce&amp;_wpnonce=dbc88a03f5&amp;TB_iframe=true&amp;width=600&amp;height=800" class="thickbox open-plugin-details-modal" aria-label="Установить WooCommerce">(Установить)</a></li></ul></div>', 'no'),
+(137, '_transient_is_multi_author', '0', 'yes');
 
 -- --------------------------------------------------------
 
@@ -247,12 +246,12 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 -- Структура таблицы `wp_postmeta`
 --
 
-CREATE TABLE `wp_postmeta` (
-  `meta_id` bigint(20) UNSIGNED NOT NULL,
-  `post_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `wp_postmeta` (
+  `meta_id` bigint(20) unsigned NOT NULL,
+  `post_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) DEFAULT NULL,
   `meta_value` longtext
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `wp_postmeta`
@@ -267,9 +266,9 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 -- Структура таблицы `wp_posts`
 --
 
-CREATE TABLE `wp_posts` (
-  `ID` bigint(20) UNSIGNED NOT NULL,
-  `post_author` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `wp_posts` (
+  `ID` bigint(20) unsigned NOT NULL,
+  `post_author` bigint(20) unsigned NOT NULL DEFAULT '0',
   `post_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `post_date_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `post_content` longtext NOT NULL,
@@ -285,22 +284,22 @@ CREATE TABLE `wp_posts` (
   `post_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `post_modified_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `post_content_filtered` longtext NOT NULL,
-  `post_parent` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+  `post_parent` bigint(20) unsigned NOT NULL DEFAULT '0',
   `guid` varchar(255) NOT NULL DEFAULT '',
   `menu_order` int(11) NOT NULL DEFAULT '0',
   `post_type` varchar(20) NOT NULL DEFAULT 'post',
   `post_mime_type` varchar(100) NOT NULL DEFAULT '',
   `comment_count` bigint(20) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `wp_posts`
 --
 
 INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
-(1, 1, '2017-05-27 14:39:21', '2017-05-27 11:39:21', 'Добро пожаловать в WordPress. Это ваша первая запись. Отредактируйте или удалите её, затем пишите!', 'Привет, мир!', '', 'publish', 'open', 'open', '', '%d0%bf%d1%80%d0%b8%d0%b2%d0%b5%d1%82-%d0%bc%d0%b8%d1%80', '', '', '2017-05-27 14:39:21', '2017-05-27 11:39:21', '', 0, 'neftehim2.loc2/?p=1', 0, 'post', '', 1),
-(2, 1, '2017-05-27 14:39:21', '2017-05-27 11:39:21', 'Это пример страницы. От записей в блоге она отличается тем, что остаётся на одном месте и отображается в меню сайта (в большинстве тем). На странице &laquo;Детали&raquo; владельцы сайтов обычно рассказывают о себе потенциальным посетителям. Например, так:\n\n<blockquote>Привет! Днём я курьер, а вечером &#8212; подающий надежды актёр. Это мой блог. Я живу в Ростове-на-Дону, люблю своего пса Джека и пинаколаду. (И ещё попадать под дождь.)</blockquote>\n\n...или так:\n\n<blockquote>Компания &laquo;Штучки XYZ&raquo; была основана в 1971 году и с тех пор производит качественные штучки. Компания находится в Готэм-сити, имеет штат из более чем 2000 сотрудников и приносит много пользы жителям Готэма.</blockquote>\n\nПерейдите <a href="http://neftehim2.loc/wp-admin/">в консоль</a>, чтобы удалить эту страницу и создать новые. Успехов!', 'Пример страницы', '', 'publish', 'closed', 'open', '', 'sample-page', '', '', '2017-05-27 14:39:21', '2017-05-27 11:39:21', '', 0, 'neftehim2.loc2/?page_id=2', 0, 'page', '', 0),
-(3, 1, '2017-05-27 14:39:35', '0000-00-00 00:00:00', '', 'Черновик', '', 'auto-draft', 'open', 'open', '', '', '', '', '2017-05-27 14:39:35', '0000-00-00 00:00:00', '', 0, 'neftehim2.loc2/?p=3', 0, 'post', '', 0);
+(1, 1, '2017-05-27 17:22:15', '2017-05-27 14:22:15', 'Добро пожаловать в WordPress. Это ваша первая запись. Отредактируйте или удалите её, затем пишите!', 'Привет, мир!', '', 'publish', 'open', 'open', '', '%d0%bf%d1%80%d0%b8%d0%b2%d0%b5%d1%82-%d0%bc%d0%b8%d1%80', '', '', '2017-05-27 17:22:15', '2017-05-27 14:22:15', '', 0, 'http://neftehim2.loc/?p=1', 0, 'post', '', 1),
+(2, 1, '2017-05-27 17:22:15', '2017-05-27 14:22:15', 'Это пример страницы. От записей в блоге она отличается тем, что остаётся на одном месте и отображается в меню сайта (в большинстве тем). На странице &laquo;Детали&raquo; владельцы сайтов обычно рассказывают о себе потенциальным посетителям. Например, так:\n\n<blockquote>Привет! Днём я курьер, а вечером &#8212; подающий надежды актёр. Это мой блог. Я живу в Ростове-на-Дону, люблю своего пса Джека и пинаколаду. (И ещё попадать под дождь.)</blockquote>\n\n...или так:\n\n<blockquote>Компания &laquo;Штучки XYZ&raquo; была основана в 1971 году и с тех пор производит качественные штучки. Компания находится в Готэм-сити, имеет штат из более чем 2000 сотрудников и приносит много пользы жителям Готэма.</blockquote>\n\nПерейдите <a href="http://neftehim2.loc/wp-admin/">в консоль</a>, чтобы удалить эту страницу и создать новые. Успехов!', 'Пример страницы', '', 'publish', 'closed', 'open', '', 'sample-page', '', '', '2017-05-27 17:22:15', '2017-05-27 14:22:15', '', 0, 'http://neftehim2.loc/?page_id=2', 0, 'page', '', 0),
+(3, 1, '2017-05-27 17:22:54', '0000-00-00 00:00:00', '', 'Черновик', '', 'auto-draft', 'open', 'open', '', '', '', '', '2017-05-27 17:22:54', '0000-00-00 00:00:00', '', 0, 'http://neftehim2.loc/?p=3', 0, 'post', '', 0);
 
 -- --------------------------------------------------------
 
@@ -308,9 +307,9 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 -- Структура таблицы `wp_termmeta`
 --
 
-CREATE TABLE `wp_termmeta` (
-  `meta_id` bigint(20) UNSIGNED NOT NULL,
-  `term_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `wp_termmeta` (
+  `meta_id` bigint(20) unsigned NOT NULL,
+  `term_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) DEFAULT NULL,
   `meta_value` longtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -321,12 +320,12 @@ CREATE TABLE `wp_termmeta` (
 -- Структура таблицы `wp_terms`
 --
 
-CREATE TABLE `wp_terms` (
-  `term_id` bigint(20) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `wp_terms` (
+  `term_id` bigint(20) unsigned NOT NULL,
   `name` varchar(200) NOT NULL DEFAULT '',
   `slug` varchar(200) NOT NULL DEFAULT '',
   `term_group` bigint(10) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `wp_terms`
@@ -341,9 +340,9 @@ INSERT INTO `wp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
 -- Структура таблицы `wp_term_relationships`
 --
 
-CREATE TABLE `wp_term_relationships` (
-  `object_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
-  `term_taxonomy_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `wp_term_relationships` (
+  `object_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `term_taxonomy_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `term_order` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -360,14 +359,14 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 -- Структура таблицы `wp_term_taxonomy`
 --
 
-CREATE TABLE `wp_term_taxonomy` (
-  `term_taxonomy_id` bigint(20) UNSIGNED NOT NULL,
-  `term_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `wp_term_taxonomy` (
+  `term_taxonomy_id` bigint(20) unsigned NOT NULL,
+  `term_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `taxonomy` varchar(32) NOT NULL DEFAULT '',
   `description` longtext NOT NULL,
-  `parent` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+  `parent` bigint(20) unsigned NOT NULL DEFAULT '0',
   `count` bigint(20) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `wp_term_taxonomy`
@@ -382,12 +381,12 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 -- Структура таблицы `wp_usermeta`
 --
 
-CREATE TABLE `wp_usermeta` (
-  `umeta_id` bigint(20) UNSIGNED NOT NULL,
-  `user_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `wp_usermeta` (
+  `umeta_id` bigint(20) unsigned NOT NULL,
+  `user_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) DEFAULT NULL,
   `meta_value` longtext
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `wp_usermeta`
@@ -408,7 +407,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (12, 1, 'wp_user_level', '10'),
 (13, 1, 'dismissed_wp_pointers', ''),
 (14, 1, 'show_welcome_panel', '1'),
-(15, 1, 'session_tokens', 'a:1:{s:64:"3bfd257be5f709b71355a67d461e9330e7df2c7422409a34d62d8fc25da10768";a:4:{s:10:"expiration";i:1497094773;s:2:"ip";s:9:"127.0.0.1";s:2:"ua";s:102:"Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36";s:5:"login";i:1495885173;}}'),
+(15, 1, 'session_tokens', 'a:1:{s:64:"32993281c16bf028f42e707615d5001bce2e396c0acded622eeaf2f104ebceaf";a:4:{s:10:"expiration";i:1496067766;s:2:"ip";s:9:"127.0.0.1";s:2:"ua";s:102:"Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36";s:5:"login";i:1495894966;}}'),
 (16, 1, 'wp_dashboard_quick_press_last_post_id', '3');
 
 -- --------------------------------------------------------
@@ -417,8 +416,8 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 -- Структура таблицы `wp_users`
 --
 
-CREATE TABLE `wp_users` (
-  `ID` bigint(20) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `wp_users` (
+  `ID` bigint(20) unsigned NOT NULL,
   `user_login` varchar(60) NOT NULL DEFAULT '',
   `user_pass` varchar(255) NOT NULL DEFAULT '',
   `user_nicename` varchar(50) NOT NULL DEFAULT '',
@@ -428,14 +427,14 @@ CREATE TABLE `wp_users` (
   `user_activation_key` varchar(255) NOT NULL DEFAULT '',
   `user_status` int(11) NOT NULL DEFAULT '0',
   `display_name` varchar(250) NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `wp_users`
 --
 
 INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES
-(1, 'admin', '$P$BkzzPGmPii0OZ2l0B1oVxNY58o615I/', 'admin', '23123@mail.ru', '', '2017-05-27 11:39:21', '', 0, 'admin');
+(1, 'admin', '$P$Bj6ePP4nQkPbhu.ptsFV1tBnlnRlXR0', 'admin', '2312312@mail.ru', '', '2017-05-27 14:22:15', '', 0, 'admin');
 
 --
 -- Индексы сохранённых таблиц
@@ -548,57 +547,57 @@ ALTER TABLE `wp_users`
 -- AUTO_INCREMENT для таблицы `wp_commentmeta`
 --
 ALTER TABLE `wp_commentmeta`
-  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `wp_comments`
 --
 ALTER TABLE `wp_comments`
-  MODIFY `comment_ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `comment_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `wp_links`
 --
 ALTER TABLE `wp_links`
-  MODIFY `link_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `link_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `wp_options`
 --
 ALTER TABLE `wp_options`
-  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
+  MODIFY `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=138;
 --
 -- AUTO_INCREMENT для таблицы `wp_postmeta`
 --
 ALTER TABLE `wp_postmeta`
-  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `wp_posts`
 --
 ALTER TABLE `wp_posts`
-  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT для таблицы `wp_termmeta`
 --
 ALTER TABLE `wp_termmeta`
-  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `wp_terms`
 --
 ALTER TABLE `wp_terms`
-  MODIFY `term_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `term_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `wp_term_taxonomy`
 --
 ALTER TABLE `wp_term_taxonomy`
-  MODIFY `term_taxonomy_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `term_taxonomy_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `wp_usermeta`
 --
 ALTER TABLE `wp_usermeta`
-  MODIFY `umeta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `umeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT для таблицы `wp_users`
 --
 ALTER TABLE `wp_users`
-  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
