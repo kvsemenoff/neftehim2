@@ -48,30 +48,10 @@
 	<a href="#" class="gototop"></a>
 
 	<!-- JS_BLOCK -->
-	<script src="<?php echo get_template_directory_uri(); ?>/libs/jquery/jquery-1.11.1.min.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/libs/owl.carousel/owl.carousel.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/libs/fancybox/jquery.fancybox.pack.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.mousewheel.js" type="text/javascript"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/responsiveTabs.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.maskedinput.min.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/fonts.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/common.js"></script>
+	
+	<script src="<?php echo get_template_directory_uri(); ?>/js/scripts.min.js"></script>
 	<script src="https://api-maps.yandex.ru/2.1/?lang=tr_TR" type="text/javascript"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/map.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/block/a/script.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/block/box/script.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/block/button/script.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/block/button-more/script.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/block/doc-item/script.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/block/h1/script.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/block/h2/script.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/block/input/script.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/block/news-item/script.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/block/product-item/script.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/block/search-box/script.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/block/strong/script.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/block/submit/script.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/block/textarea/script.js"></script>
+
 
 
 
