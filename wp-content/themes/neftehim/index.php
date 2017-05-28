@@ -1,9 +1,6 @@
 
-<?php get_header(); ?>
-<div class="n-wrapper">
-	<div class="n-header">
-		
-	</div>
+
+<?php get_header(); ?>	
 	<div class="n-content">
 		<div class="n-content-inner vertical-align">	
 			<?php require_once('includes/product.php'); ?>
