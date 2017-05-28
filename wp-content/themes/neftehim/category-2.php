@@ -20,12 +20,12 @@
 			?>
 
 			<div class="news-item">
-				<a href="#" class="news-item__caption">НАЗВАНИЕ НОВОСТИ</a>
+				<a href="<?php the_permalink(); ?>" class="news-item__caption">НАЗВАНИЕ НОВОСТИ</a>
 				<div class="news-item__img">
-					<a href="#"><img src="img/news-item2.jpg" alt=""></a>
+					<a href="<?php the_permalink(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/news-item2.jpg" alt=""></a>
 				</div>
-				<a href="#" class="news-item__txt">Nullam eget pharetra est, a pulvinar urna. Sed rutrum commodo dolor vel ullamcorper. Donec placerat ipsum non lacus congue gravida. Quisque lobortis tellus nec felis varius</a>
-				<span class="news-item__date">19.04.2107</span>
+				<a href="<?php the_permalink(); ?>" class="news-item__txt"><?php  do_excerpt(get_the_excerpt(), 7); ?></a>
+				<span class="news-item__date"><?php the_time('d.m.Y'); ?></span>
 			</div>					
 			
 			<?php }?>
