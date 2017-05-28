@@ -8,9 +8,5 @@
 			<?php require_once('includes/news.php'); ?>
 		</div>
 	</div>
-	<div class="n-footer">
-	 <?php get_footer(); ?>
-	</div>
-</div>
-</body>
-</html>
+	
+<?php get_footer(); ?>	
