@@ -5,37 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?php bloginfo('name'); ?><?php wp_title(); ?></title>
 
-	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png" />
 
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/libs/bootstrap/bootstrap-grid-3.3.1.min.css" />
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/libs/fancybox/jquery.fancybox.css" />
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/libs/owl.carousel/assets/owl.carousel.css" />	
-
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/reset.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/fonts.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
-
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/block/a/style.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/block/box/style.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/block/button/style.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/block/button-more/style.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/block/doc-item/style.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/block/h1/style.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/block/h2/style.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/block/input/style.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/block/news-item/style.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/block/product-item/style.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/block/search-box/style.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/block/strong/style.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/block/submit/style.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/block/textarea/style.css">
-
-
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-db.css">	
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-dd.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-de.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-df.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-dg.css">
+	<link rel="shortcut icon" href="favicon.png" />
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/libs.min.css">	
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
 	
 	
 	
