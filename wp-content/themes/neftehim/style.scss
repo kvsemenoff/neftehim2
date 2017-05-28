@@ -135,7 +135,7 @@ a:hover{
 	padding-left: 80px;
 	overflow: hidden;
 	transition:0.5s;	
-	background-image: url("../../img/arrow1.png");
+	background-image: url("./img/arrow1.png");
 	background-repeat: no-repeat;
 	background-position: center left 25px;
 	.button-more__bg{
@@ -168,7 +168,7 @@ a:hover{
 		left:20px;
 		width: 75px;
 		height: 100%;
-		background-image: url("../../img/forbutton.png");
+		background-image: url("./img/forbutton.png");
 		background-repeat: no-repeat;
 		background-position: right 16px top;
 		z-index: 10;		
@@ -190,7 +190,7 @@ a:hover{
 	}
 	&:hover{
 		transition:0.5s;
-		background-image: url("../../img/arrow2.png");
+		background-image: url("./img/arrow2.png");
 		&:after{ width: 100%; border-radius: 0; }
 	}
 }
@@ -390,7 +390,7 @@ textarea:-ms-input-placeholder      {color: #555;}
 			transform:translate(-50%, -50%);
 			width: 31px;
 			height: 31px;
-			background: url("../../img/zoom.png")no-repeat center;
+			background: url("./img/zoom.png")no-repeat center;
 		}
 	}	
 }
@@ -483,7 +483,7 @@ textarea:-ms-input-placeholder      {color: #555;}
 		height: 20px;
 		border: none;
 		outline: none;
-		background:url(../../img/lupa.png) no-repeat;
+		background:url(./img/lupa.png) no-repeat;
 	}
 }
 strong {
@@ -515,7 +515,7 @@ strong {
 	font-weight: 400;
 	line-height: 20px;
 	color: #555;
-	background: url("../img/footer-fon.jpg")no-repeat;
+	background: url("./img/footer-fon.jpg")no-repeat;
 	background-size: cover;
 	&_copyright{
 		padding-bottom: 15px;
@@ -603,9 +603,9 @@ strong {
 		font-size: 25px;
 		width: 16px;
 		height: 16px;
-		background: url("../img/close.png")no-repeat;
+		background: url("./img/close.png")no-repeat;
 		&:hover{
-			background: url("../img/close-active.png")no-repeat;
+			background: url("./img/close-active.png")no-repeat;
 		}
 	}
 
@@ -656,7 +656,7 @@ strong {
 	}
 }
 .menu__mobile{
-	background:url(../img/mw.jpg) no-repeat top center;
+	background:url(./img/mw.jpg) no-repeat top center;
 	width: 100%;
 	background-size:cover;
 	padding: 10px 0px;
@@ -673,7 +673,7 @@ strong {
 	width: 100%;
 	background-size:cover;
 	@media only screen and (min-width : 768px) {
-		background:url(../img/mw.jpg) no-repeat top center;
+		background:url(./img/mw.jpg) no-repeat top center;
 		background-size:cover;
 	}
 	.main-menu{
@@ -715,7 +715,7 @@ strong {
 /* Catalog
 ==========================*/
 .catalog-wrap{
-	background:url(../img/catimg.jpg) no-repeat top center;
+	background:url(./img/catimg.jpg) no-repeat top center;
 	background-size:cover;
 	width: 100%;
 	text-align: center;
@@ -783,7 +783,7 @@ strong {
 	}
 }
 .service-page{
-	background: url(../img/service-bg.jpg) center/cover;
+	background: url(./img/service-bg.jpg) center/cover;
 	h2{
 		padding-bottom: 15px;
 	}
@@ -845,7 +845,7 @@ strong {
 		position: relative;
 		float: left;
 		transition: 0.3s all ease;
-		background: url(../img/pagination-arrow.png) center left no-repeat;
+		background: url(./img/pagination-arrow.png) center left no-repeat;
 		margin-bottom: 15px;
 		&::before{
 			content: "";
@@ -857,13 +857,13 @@ strong {
 			width: 40px;
 			height: 32px;
 			transition: 0.3s all ease;
-			background: url(../img/arrow2.png);
+			background: url(./img/arrow2.png);
 			transform: rotate(180deg);
 		}
 		&:hover{
-			background: url(../img/pagination-arrow-hover.png) center left no-repeat;
+			background: url(./img/pagination-arrow-hover.png) center left no-repeat;
 			&::before{
-				background: url(../img/arrow1.png);
+				background: url(./img/arrow1.png);
 			}
 		}
 		&_right{
@@ -878,7 +878,7 @@ strong {
 	.container{
 		padding: 0;
 	}
-	background: url(../img/mape-bg.jpg) center/cover;
+	background: url(./img/mape-bg.jpg) center/cover;
 	.box{
 		margin-bottom: 20px;
 	}
@@ -936,7 +936,7 @@ strong {
 }
 .news-page{
 	padding-bottom: 20px;
-	background: url(../img/detailed_news.jpg) center/cover;
+	background: url(./img/detailed_news.jpg) center/cover;
 	h2{
 		padding-bottom: 15px;
 	}
@@ -1023,7 +1023,7 @@ strong {
 
 // about ===========
 .aboutbackground{
-	background: url("../img/aboutbg.jpg") no-repeat top center;
+	background: url("./img/aboutbg.jpg") no-repeat top center;
 	background-size: cover;
 	padding: 19px 0 30px 0;
 	margin-top: 15px;
@@ -1164,7 +1164,7 @@ strong {
 
 
 .newsbgimg{
-	background: url("../img/newsbg.jpg")no-repeat center;
+	background: url("./img/newsbg.jpg")no-repeat center;
 	background-size: cover;
 }
 .newsbg{
@@ -1189,7 +1189,7 @@ strong {
 
 // bitums ===========
 .bitumsbgimg{
-	background: url("../img/bityumbg.jpg")no-repeat center;
+	background: url("./img/bityumbg.jpg")no-repeat center;
 	background-size: cover;
 }
 .bitumsblock{
@@ -1252,7 +1252,7 @@ strong {
 	z-index: 990;
 	right: 3%;
 	bottom: 7%;
-	background-image: url("../img/arrow1.png");
+	background-image: url("./img/arrow1.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	transform:rotate(-90deg);

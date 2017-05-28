@@ -122,7 +122,7 @@ a:hover {
   padding-left: 80px;
   overflow: hidden;
   transition: 0.5s;
-  background-image: url("../../img/arrow1.png");
+  background-image: url("./img/arrow1.png");
   background-repeat: no-repeat;
   background-position: center left 25px; }
   .button-more .button-more__bg {
@@ -153,7 +153,7 @@ a:hover {
     left: 20px;
     width: 75px;
     height: 100%;
-    background-image: url("../../img/forbutton.png");
+    background-image: url("./img/forbutton.png");
     background-repeat: no-repeat;
     background-position: right 16px top;
     z-index: 10; }
@@ -173,7 +173,7 @@ a:hover {
         width: 65px; } }
   .button-more:hover {
     transition: 0.5s;
-    background-image: url("../../img/arrow2.png"); }
+    background-image: url("./img/arrow2.png"); }
     .button-more:hover:after {
       width: 100%;
       border-radius: 0; }
@@ -372,7 +372,7 @@ textarea:-ms-input-placeholder {
       transform: translate(-50%, -50%);
       width: 31px;
       height: 31px;
-      background: url("../../img/zoom.png") no-repeat center; }
+      background: url("./img/zoom.png") no-repeat center; }
 
 .product-item__txtbox {
   display: inline-block;
@@ -449,7 +449,7 @@ textarea:-ms-input-placeholder {
     height: 20px;
     border: none;
     outline: none;
-    background: url(../../img/lupa.png) no-repeat; }
+    background: url(./img/lupa.png) no-repeat; }
 
 strong {
   font-weight: bold; }
@@ -477,7 +477,7 @@ input[type="submit"] {
   font-weight: 400;
   line-height: 20px;
   color: #555;
-  background: url("../img/footer-fon.jpg") no-repeat;
+  background: url("./img/footer-fon.jpg") no-repeat;
   background-size: cover; }
   .footer_copyright {
     padding-bottom: 15px;
@@ -554,9 +554,9 @@ input[type="submit"] {
     font-size: 25px;
     width: 16px;
     height: 16px;
-    background: url("../img/close.png") no-repeat; }
+    background: url("./img/close.png") no-repeat; }
     #js-form1 .js-close:hover, #js-form2 .js-close:hover {
-      background: url("../img/close-active.png") no-repeat; }
+      background: url("./img/close-active.png") no-repeat; }
   #js-form1 .modal-form, #js-form2 .modal-form {
     max-width: 420px; }
     #js-form1 .modal-form input[type="text"], #js-form1 .modal-form input[type="email"], #js-form1 .modal-form .input-border, #js-form2 .modal-form input[type="text"], #js-form2 .modal-form input[type="email"], #js-form2 .modal-form .input-border {
@@ -593,7 +593,7 @@ input[type="submit"] {
       color: #f57107; }
 
 .menu__mobile {
-  background: url(../img/mw.jpg) no-repeat top center;
+  background: url(./img/mw.jpg) no-repeat top center;
   width: 100%;
   background-size: cover;
   padding: 10px 0px; }
@@ -610,7 +610,7 @@ input[type="submit"] {
   background-size: cover; }
   @media only screen and (min-width: 768px) {
     .menu__wrap {
-      background: url(../img/mw.jpg) no-repeat top center;
+      background: url(./img/mw.jpg) no-repeat top center;
       background-size: cover; } }
   .menu__wrap .main-menu {
     display: none;
@@ -644,7 +644,7 @@ input[type="submit"] {
 /* Catalog
 ==========================*/
 .catalog-wrap {
-  background: url(../img/catimg.jpg) no-repeat top center;
+  background: url(./img/catimg.jpg) no-repeat top center;
   background-size: cover;
   width: 100%;
   text-align: center; }
@@ -700,7 +700,7 @@ input[type="submit"] {
     margin-bottom: 5px; }
 
 .service-page {
-  background: url(../img/service-bg.jpg) center/cover; }
+  background: url(./img/service-bg.jpg) center/cover; }
   .service-page h2 {
     padding-bottom: 15px; }
   .service-page .box {
@@ -755,7 +755,7 @@ input[type="submit"] {
     position: relative;
     float: left;
     transition: 0.3s all ease;
-    background: url(../img/pagination-arrow.png) center left no-repeat;
+    background: url(./img/pagination-arrow.png) center left no-repeat;
     margin-bottom: 15px; }
     .archive-pagination .pagination__btn::before {
       content: "";
@@ -767,17 +767,17 @@ input[type="submit"] {
       width: 40px;
       height: 32px;
       transition: 0.3s all ease;
-      background: url(../img/arrow2.png);
+      background: url(./img/arrow2.png);
       transform: rotate(180deg); }
     .archive-pagination .pagination__btn:hover {
-      background: url(../img/pagination-arrow-hover.png) center left no-repeat; }
+      background: url(./img/pagination-arrow-hover.png) center left no-repeat; }
       .archive-pagination .pagination__btn:hover::before {
-        background: url(../img/arrow1.png); }
+        background: url(./img/arrow1.png); }
     .archive-pagination .pagination__btn_right {
       transform: rotate(180deg); }
 
 .mape-page {
-  background: url(../img/mape-bg.jpg) center/cover; }
+  background: url(./img/mape-bg.jpg) center/cover; }
   .mape-page h2 {
     padding-bottom: 15px; }
   .mape-page .container {
@@ -827,7 +827,7 @@ input[type="submit"] {
 
 .news-page {
   padding-bottom: 20px;
-  background: url(../img/detailed_news.jpg) center/cover; }
+  background: url(./img/detailed_news.jpg) center/cover; }
   .news-page h2 {
     padding-bottom: 15px; }
   .news-page .news {
@@ -898,7 +898,7 @@ input[type="submit"] {
   height: auto; }
 
 .aboutbackground {
-  background: url("../img/aboutbg.jpg") no-repeat top center;
+  background: url("./img/aboutbg.jpg") no-repeat top center;
   background-size: cover;
   padding: 19px 0 30px 0;
   margin-top: 15px; }
@@ -1022,7 +1022,7 @@ input[type="submit"] {
     margin-top: -4px; }
 
 .newsbgimg {
-  background: url("../img/newsbg.jpg") no-repeat center;
+  background: url("./img/newsbg.jpg") no-repeat center;
   background-size: cover; }
 
 .newsbg {
@@ -1043,7 +1043,7 @@ input[type="submit"] {
   text-align: center; }
 
 .bitumsbgimg {
-  background: url("../img/bityumbg.jpg") no-repeat center;
+  background: url("./img/bityumbg.jpg") no-repeat center;
   background-size: cover; }
 
 .bitumsblock {
@@ -1094,7 +1094,7 @@ input[type="submit"] {
   z-index: 990;
   right: 3%;
   bottom: 7%;
-  background-image: url("../img/arrow1.png");
+  background-image: url("./img/arrow1.png");
   background-repeat: no-repeat;
   background-position: center;
   transform: rotate(-90deg);
