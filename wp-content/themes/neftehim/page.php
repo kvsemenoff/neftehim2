@@ -18,7 +18,7 @@
 				<span class="news-item__date"><?php the_time('d.m.Y'); ?></span>
 			</div>	
 
-		<?php endwhile; ?>
+	<?php endwhile; ?>
 	<?php else: ?>
 	<?php endif; ?> 	
 </div>
