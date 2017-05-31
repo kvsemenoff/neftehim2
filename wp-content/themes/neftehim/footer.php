@@ -52,9 +52,6 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/scripts.min.js"></script>
 	<script src="https://api-maps.yandex.ru/2.1/?lang=tr_TR" type="text/javascript"></script>
 
-
-
-
 </div>
 
 <?php wp_footer(); ?>
