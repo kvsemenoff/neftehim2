@@ -1,9 +1,3 @@
-
- 		$(document).ready(function() {
- 			// $("head").append('<link href="https://fonts.googleapis.com/css?family=PT+Sans&amp;subset=cyrillic" rel="stylesheet">');
- 			$("head").append("<link href='//netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.css' rel='stylesheet'>");
- 		}); 
- 		
 $(document).ready(function(){
 	$(".js-phone").mask("+7 (999) 999 - 99 - 99?");
 	// Мобильное меню 
@@ -14,15 +8,24 @@ $(document).ready(function(){
 	// Конец Мобильное меню
 
 	// вывод блока в каталоге 
-	$(".js-button_1").click(function(z){
-		z.preventDefault();
-		$(".box2").slideToggle(500);
+	
+	$('.box1 > .product-item:gt(2)').hide();
+	$('.box2 > .product-item:gt(2)').hide();
+	$('.box3 > .product-item:gt(2)').hide();
+
+	$(".catalog-button a").on('click', function(e){
+		e.preventDefault();			
+		if ($(this).find('.button-more__txt').text() == 'Свернуть каталог') {
+			$(this).parents('.box').find('.product-item:gt(2)').hide();	
+			$(this).find('.button-more__txt').text('ВЕСЬ АССОРТИМЕНТ ПРОДУКЦИИ');
+			$(this).parents('.box').find('.button-more_active').removeClass('button-more_active');
+		}else{
+			$(this).parents('.box').find('.product-item').show();	
+			$(this).find('.button-more__txt').text('Свернуть каталог');			
+			$(this).addClass('button-more_active');
+		}
 	});
-	$(".js-button2").click(function(q){
-		q.preventDefault();
-		// $(".box2").css("display","none");
-		$(".box2").slideUp(500);
-	});
+
 	// Конец вывод блока в каталоге
 
 	/*MODAL WINDOW*/
@@ -109,99 +112,3 @@ $(document).on("scroll", function(){
 	
 });
 	
-$(document).ready(function(){
-	ymaps.ready(init);
-
-	function init() {
-    var center = [55.72858056899627,37.454141999999955];
-    var center1 = [55.59113656911934,37.88662649999996];
-    var myMap1 = new ymaps.Map('mape-ofice', {
-        center: center,
-        controls: [],
-        zoom: 16,  
-        controls: ['smallMapDefaultSet']
-    }, {
-        searchControlProvider: 'yandex#search'
-        
-
-    });
-    
-    myMap1.behaviors.disable('scrollZoom');
-    var myMap2 = new ymaps.Map('mape-sclad', {
-        center: center1,
-        controls: [],
-        zoom: 16,
-        controls: ['smallMapDefaultSet']
-    }, {
-        searchControlProvider: 'yandex#search'
-       
-    });
-    myMap2.behaviors.disable('scrollZoom');
-    var myPlacemark1 = new ymaps.Placemark(center, {
-        // Свойства.
-        // Содержимое иконки, балуна и хинта.
-    	  balloonContent: 'улица Ивана Франко, 4к4',
-        hintContent: 'улица Ивана Франко, 4к4'
-    }, {
-        // Опции.
-        iconLayout: 'default#image',
-        iconImageHref: 'img/map-ic.png',
-        iconImageSize: [42, 42]
-        // preset: 'twirl#violetIcon'
-    });
-    var myPlacemark2 = new ymaps.Placemark(center, {
-        // Свойства.
-        // Содержимое иконки, балуна и хинта.
-        balloonContent: 'Колхозная улица, 4',
-        hintContent: 'Колхозная улица, 4'
-    }, {
-        // Опции.
-        // Стандартная фиолетовая иконка.
-        iconLayout: 'default#image',
-        iconImageHref: 'img/map-ic.png',
-        iconImageSize: [42, 42],
-        preset: 'twirl#violetIcon'
-    });
-    myMap1.geoObjects.add(myPlacemark1);
-    myMap2.geoObjects.add(myPlacemark2);
-	}
-});
-
-
-
-
-$(document).ready(function(){
-	$(".doc").fancybox(
-	{						
-		"padding" : 10,
-		"imageScale" : false, 
-		"zoomOpacity" : false,
-		"zoomSpeedIn" : 1000,	
-		"zoomSpeedOut" : 1000,	
-		"zoomSpeedChange" : 1000, 
-		"frameWidth" : 700,	 
-		"frameHeight" : 600, 
-		"overlayShow" : true, 
-		"overlayOpacity" : 0.8,	
-		"hideOnContentClick" :false,
-		"centerOnScroll" : false
-	});
-});
-
-
-
-
-jQuery(document).ready(function($) {
-	$("a[data-fancybox-group=group]").fancybox({
-		'transitionIn' : 'none',
-		'transitionOut' : 'none',
-		'titlePosition' : 'over',
-		'titleFormat' : function(title, currentArray, currentIndex, currentOpts) {
-			return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
-		}
-	});
-});
-
-
-
-

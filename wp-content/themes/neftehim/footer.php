@@ -49,7 +49,8 @@
 
 	<!-- JS_BLOCK -->
 	
-	<script src="<?php echo get_template_directory_uri(); ?>/js/scripts.min.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/libs.min.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/common.js"></script>
 	<script src="https://api-maps.yandex.ru/2.1/?lang=tr_TR" type="text/javascript"></script>
 
 </div>
