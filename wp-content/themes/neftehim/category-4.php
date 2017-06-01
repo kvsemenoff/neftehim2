@@ -48,6 +48,7 @@
 				</div>		
 
 				<?php }?>
+				<?php wp_reset_query() ?>
 				<div class="catalog-button catalog-button1">
 					<a href="#" class="button-more button-more_width js-button_1">
 						<span class="button-more__bg">
@@ -104,7 +105,7 @@
 				</div>		
 
 				<?php }?>
-
+				<?php wp_reset_query() ?>
 			<div class="catalog-button catalog-button2">
 				<a href="#" class="button-more button-more_width">
 					<span class="button-more__bg">
@@ -159,7 +160,7 @@
 				</div>		
 
 				<?php }?>
-
+				<?php wp_reset_query() ?>
 			<div class="catalog-button catalog-button3">
 				<a href="#" class="button-more button-more_width">
 					<span class="button-more__bg">
