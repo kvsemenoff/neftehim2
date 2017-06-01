@@ -10,7 +10,7 @@
 				<div class="product-section__img">
 					<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/product1.jpg" alt=""></a>
 				</div>
-				<a href="#" class="button-more button-more_width">
+				<a href="/category/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%BF%D0%B0%D1%80%D0%B0%D1%84%D0%B8%D0%BD%D0%BE-%D0%B2%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D0%B0%D1%8F-%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/" class="button-more button-more_width">
 					<span class="button-more__bg">
 						<span class="button-more__txt">ПАРАФИНО-ВОСКОВАЯ ПРОДУКЦИЯ </span>
 					</span>
@@ -20,7 +20,7 @@
 				<div class="product-section__img">
 					<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/product2.jpg" alt=""></a>
 				</div>				
-				<a href="#" class="button-more button-more_width">
+				<a href="/category/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%B1%D0%B8%D1%82%D1%83%D0%BC%D1%8B-%D0%B8-%D0%BC%D0%B0%D0%B7%D1%83%D1%82%D1%8B/" class="button-more button-more_width">
 					<span class="button-more__bg">
 						<span class="button-more__txt">БИТУМЫ И МАЗУТЫ</span>
 					</span>
@@ -30,7 +30,7 @@
 				<div class="product-section__img">
 					<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/product3.jpg" alt=""></a>
 				</div>				
-				<a href="#" class="button-more button-more_width">
+				<a href="/category/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%BD%D0%B5%D1%84%D1%82%D0%B5%D1%85%D0%B8%D0%BC%D0%B8%D1%8F/" class="button-more button-more_width">
 					<span class="button-more__bg">
 						<span class="button-more__txt">НЕФТЕХИМИЯ</span>
 					</span>
