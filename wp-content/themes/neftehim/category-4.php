@@ -3,21 +3,35 @@
 
 <div class="n-content">
 	<div class="n-content-inner vertical-align catalog-wrap">
+
 		<div class="container box box1">
-			<h1 class="h2">Парафино-восковая продукция</h1>
+			<?php
+			$parent_id = 4;
+
+			# получаем дочерние рубрики
+			$sub_cats = get_categories( array(
+				'child_of' => $parent_id,
+				'hide_empty' => 0,
+				'include' => '6'
+			));
+
+			if( $sub_cats ){
+				foreach( $sub_cats as $cat ){
+			?>
 
 
-			<?php 
-			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-			$args = array(
-				'cat' => 4,
-				'paged' => $paged
-				);
-
-			$query = new WP_Query($args);
-			while ( $query->have_posts() ) {
-				$query->the_post();
+			<h1 class="h2"><?php echo $cat->name; ?></h1>
+				
+				
+				<?php	
+				$args = array(
+					'cat' => $cat->term_id,
+					);
+				$query = new WP_Query($args);
+				while ( $query->have_posts() ) {
+					$query->the_post();
 				?>
+
 
 				<div class="product-item">
 					<h4 class="product-item__caption"><?php the_title(); ?></h4>	
@@ -45,36 +59,52 @@
 						</div>
 					</div>
 					<div class="clearfix"></div>
-				</div>		
+				</div>
 
-				<?php }?>
-				<?php wp_reset_query() ?>
+
+					<?php
+						}
+					}
+				}
+				?>
 				<div class="catalog-button catalog-button1">
-					<a href="#" class="button-more button-more_width js-button_1">
+					<a href="#" class="button-more button-more_width">
 						<span class="button-more__bg">
 							<span class="button-more__txt">ВЕСЬ АССОРТИМЕНТ ПРОДУКЦИИ</span>
 						</span>
 					</a>
 				</div>
-			
 		</div>
-
-
 		
+
 		<div class="container box box2">
-			<h1 class="h2">Битумы и мазуты</h1>
+			<?php
+			$parent_id = 4;
 
-			<?php 
-			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-			$args = array(
-				'cat' => 4,
-				'paged' => $paged
-				);
+			# получаем дочерние рубрики
+			$sub_cats = get_categories( array(
+				'child_of' => $parent_id,
+				'hide_empty' => 0,
+				'include' => '3'
+			));
 
-			$query = new WP_Query($args);
-			while ( $query->have_posts() ) {
-				$query->the_post();
+			if( $sub_cats ){
+				foreach( $sub_cats as $cat ){
+			?>
+
+
+			<h1 class="h2"><?php echo $cat->name; ?></h1>
+				
+				
+				<?php	
+				$args = array(
+					'cat' => $cat->term_id,
+					);
+				$query = new WP_Query($args);
+				while ( $query->have_posts() ) {
+					$query->the_post();
 				?>
+
 
 				<div class="product-item">
 					<h4 class="product-item__caption"><?php the_title(); ?></h4>	
@@ -102,34 +132,51 @@
 						</div>
 					</div>
 					<div class="clearfix"></div>
-				</div>		
+				</div>
 
-				<?php }?>
-				<?php wp_reset_query() ?>
-			<div class="catalog-button catalog-button2">
-				<a href="#" class="button-more button-more_width">
-					<span class="button-more__bg">
-						<span class="button-more__txt">ВЕСЬ АССОРТИМЕНТ ПРОДУКЦИИ</span>
-					</span>
-				</a>
-			</div>
-		</div>			
 
+					<?php
+						}
+					}
+				}
+				?>
+				<div class="catalog-button catalog-button1">
+					<a href="#" class="button-more button-more_width">
+						<span class="button-more__bg">
+							<span class="button-more__txt">ВЕСЬ АССОРТИМЕНТ ПРОДУКЦИИ</span>
+						</span>
+					</a>
+				</div>
+		</div>
 
 		<div class="container box box3">
-			<h1 class="h2">Нефтехимия</h1>
+			<?php
+			$parent_id = 4;
 
-			<?php 
-			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-			$args = array(
-				'cat' => 4,
-				'paged' => $paged
-				);
+			# получаем дочерние рубрики
+			$sub_cats = get_categories( array(
+				'child_of' => $parent_id,
+				'hide_empty' => 0,
+				'include' => '5'
+			));
 
-			$query = new WP_Query($args);
-			while ( $query->have_posts() ) {
-				$query->the_post();
+			if( $sub_cats ){
+				foreach( $sub_cats as $cat ){
+			?>
+
+
+			<h1 class="h2"><?php echo $cat->name; ?></h1>
+				
+				
+				<?php	
+				$args = array(
+					'cat' => $cat->term_id,
+					);
+				$query = new WP_Query($args);
+				while ( $query->have_posts() ) {
+					$query->the_post();
 				?>
+
 
 				<div class="product-item">
 					<h4 class="product-item__caption"><?php the_title(); ?></h4>	
@@ -157,19 +204,24 @@
 						</div>
 					</div>
 					<div class="clearfix"></div>
-				</div>		
+				</div>
 
-				<?php }?>
-				<?php wp_reset_query() ?>
-			<div class="catalog-button catalog-button3">
-				<a href="#" class="button-more button-more_width">
-					<span class="button-more__bg">
-						<span class="button-more__txt">ВЕСЬ АССОРТИМЕНТ ПРОДУКЦИИ</span>
-					</span>
-				</a>
-			</div>	
+
+					<?php
+						}
+					}
+				}
+				?>
+				<div class="catalog-button catalog-button1">
+					<a href="#" class="button-more button-more_width">
+						<span class="button-more__bg">
+							<span class="button-more__txt">ВЕСЬ АССОРТИМЕНТ ПРОДУКЦИИ</span>
+						</span>
+					</a>
+				</div>
 		</div>
-
+		
+		
 	</div>
 </div>
 

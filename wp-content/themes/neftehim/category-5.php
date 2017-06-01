@@ -4,7 +4,7 @@
 <div class="n-content">
 	<div class="n-content-inner vertical-align bitumsbgimg">	
 		<div class="container newsbg bitumsblock">				
-			<h1 class="h2 about__caption">БИТУМЫ И МАЗУТЫ</h1>
+			<h1 class="h2 about__caption"><?php the_title(); ?></h1>
 
 		
 		<?php 
