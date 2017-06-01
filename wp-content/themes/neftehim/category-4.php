@@ -34,7 +34,7 @@
 							<?php } ?>
 							<?php } ?>						
 						</div>		
-						<p><?php  do_excerpt(get_the_excerpt(), 15); ?>					
+						<p><?php  do_excerpt(get_the_excerpt(), 13); ?>					
 						</p>	
 					</div>
 					<div class="product-item__buttons">
@@ -90,7 +90,7 @@
 							<?php } ?>
 							<?php } ?>						
 						</div>		
-						<p><?php  do_excerpt(get_the_excerpt(), 15); ?>					
+						<p><?php  do_excerpt(get_the_excerpt(), 13); ?>					
 						</p>	
 					</div>
 					<div class="product-item__buttons">
@@ -145,7 +145,7 @@
 							<?php } ?>
 							<?php } ?>						
 						</div>		
-						<p><?php  do_excerpt(get_the_excerpt(), 15); ?>					
+						<p><?php  do_excerpt(get_the_excerpt(), 13); ?>					
 						</p>	
 					</div>
 					<div class="product-item__buttons">
