@@ -10,7 +10,7 @@
 		<?php 
 			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 			$args = array(
-				'cat' => 3,
+				'cat' => 5,
 				'paged' => $paged
 			);
 
