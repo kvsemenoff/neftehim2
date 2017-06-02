@@ -5,7 +5,7 @@
 				<div class="col-md-4">
 					<p class="footer_copyright">© 2017 ООО «НенфтеХимСинтез»</p>
 					<div class="footer_form">
-						<form class="search-box">
+						<form action="<?php bloginfo( 'url' ); ?>" method="get" class="search-box">
 							<input type="text"  name="s">
 							<input type="submit" value="">
 						</form>
