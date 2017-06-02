@@ -5,7 +5,6 @@
 <div class="news-page">
 	<div class="container">				
 		<div class="box">
-			<h1 class="h2"><?php the_title(); ?></h1>
 			<div class="content clearfix">						
 				
 
@@ -17,7 +16,7 @@
 				<?php endwhile; else: ?>
 				<p>Поиск не дал результатов.</p><br/><br/>
 			<?php endif;?>
-			
+
 		</div>	
 	</div>
 </div>
