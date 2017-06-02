@@ -57,7 +57,7 @@
 			
 
 			<div class="news-button">
-				<a href="#" class="button-more button-more_width">
+				<a href="/category/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/" class="button-more button-more_width">
 					<span class="button-more__bg">
 						<span class="button-more__txt">ПЕРЕЙТИ К ПОЛНОМУ КАТАЛОГУ ПРОДУКЦИИ</span>
 					</span>
