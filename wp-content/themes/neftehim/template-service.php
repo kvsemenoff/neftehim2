@@ -40,7 +40,14 @@ Template name: Направления
 									?>
 									<div class="docs clearfix">
 										<span class="box-descr"><?php the_title(); ?></span>
-										
+										<div class="doc-wrap">
+										<div class="doc-item">
+											<a class="doc" data-fancybox-group=group	href="<?php echo $image['full']; ?>"><?php 
+											 the_post_thumbnail();
+											 ?></a><br/>
+											 <a href="#">Скачать</a>
+										</div>
+									</div>
 										<?php if( class_exists('Dynamic_Featured_Image') ) { ?>
 										<?php global $dynamic_featured_image; ?>
 										<?php $featured_images = $dynamic_featured_image->get_featured_images( get_the_ID() ); ?>
@@ -54,8 +61,7 @@ Template name: Направления
 										<?php } ?>
 
 										<?php } ?>
-										<a class="doc" data-fancybox-group=group	href="<?php echo $image['full']; ?>">Посмотреть</a> <a href="#">Скачать</a>
-										
+
 									</div>
 
 									<?php } ?>
