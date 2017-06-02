@@ -42,7 +42,7 @@ Template name: Направления
 										<span class="box-descr"><?php the_title(); ?></span>
 										<div class="doc-wrap">
 										<div class="doc-item">
-											<a class="doc" data-fancybox-group=group	href="<?php echo $image['full']; ?>"><?php 
+											<a class="doc" data-fancybox-group="group"	href="<?php echo $image['full']; ?>"><?php 
 											 the_post_thumbnail();
 											 ?></a><br/>
 											 <a href="#">Скачать</a>
