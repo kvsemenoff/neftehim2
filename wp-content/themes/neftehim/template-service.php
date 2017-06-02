@@ -33,7 +33,8 @@ Template name: Направления
 								$args = array(
 									'cat' => 8
 									);
-
+								
+							
 								$query = new WP_Query($args);
 								while ( $query->have_posts() ) {
 									$query->the_post();
@@ -48,7 +49,8 @@ Template name: Направления
 											<a class="doc" data-fancybox-group="group" href="<?php echo $thumbnail[0]; ?>"><?php 
 													the_post_thumbnail();
 													?></a><br/>
-													<a href="#">Скачать</a>
+													<?php $link = get_field('загрузка_файла'); ?>
+													<a href="<?php echo $link['url']  ?>" download>Скачать</a>
 												</div>
 											</div>
 											<?php if( class_exists('Dynamic_Featured_Image') ) { ?>
