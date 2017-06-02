@@ -40,22 +40,22 @@ Template name: Направления
 									?>
 									<div class="docs clearfix">
 										<span class="box-descr"><?php the_title(); ?></span>
+										
+										<?php if( class_exists('Dynamic_Featured_Image') ) { ?>
+										<?php global $dynamic_featured_image; ?>
+										<?php $featured_images = $dynamic_featured_image->get_featured_images( get_the_ID() ); ?>
+										<?php foreach( $featured_images as $image ) { ?>				
 										<div class="doc-wrap">
 											<div class="doc-item">
-												<?php if( class_exists('Dynamic_Featured_Image') ) { ?>
-												<?php global $dynamic_featured_image; ?>
-												<?php $featured_images = $dynamic_featured_image->get_featured_images( get_the_ID() ); ?>
-												<?php foreach( $featured_images as $image ) { ?>				
-
 												<a href="<?php echo $image['full'] ?>" data-fancybox-group="group">		<img src="<?php echo $image['full'] ?>" alt="">
 												</a>
-
-												<?php } ?>
-
-												<?php } ?>
-												<a class="doc" data-fancybox-group=group	href="../../img/doc.jpg">Посмотреть</a> <a href="#">Скачать</a>
 											</div>
 										</div>
+										<?php } ?>
+
+										<?php } ?>
+										<a class="doc" data-fancybox-group=group	href="<?php echo $image['full']; ?>">Посмотреть</a> <a href="#">Скачать</a>
+										
 									</div>
 
 									<?php } ?>
