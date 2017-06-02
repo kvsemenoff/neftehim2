@@ -105,7 +105,8 @@
 			// задаем нужные нам критерии выборки данных из БД
 		$args = array(
 			'posts_per_page' => 3,
-			'orderby' => 'comment_count'
+			'orderby' => 'comment_count',
+			'cat' => '2'
 			);
 
 		$query = new WP_Query( $args );
