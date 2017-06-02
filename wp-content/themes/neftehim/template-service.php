@@ -41,30 +41,33 @@ Template name: Направления
 									<div class="docs clearfix">
 										<span class="box-descr"><?php the_title(); ?></span>
 										<div class="doc-wrap">
-										<div class="doc-item">
-											<a class="doc" data-fancybox-group="group"	href="<?php echo $image['full']; ?>"><?php 
-											 the_post_thumbnail();
-											 ?></a><br/>
-											 <a href="#">Скачать</a>
-										</div>
-									</div>
-										<?php if( class_exists('Dynamic_Featured_Image') ) { ?>
-										<?php global $dynamic_featured_image; ?>
-										<?php $featured_images = $dynamic_featured_image->get_featured_images( get_the_ID() ); ?>
-										<?php foreach( $featured_images as $image ) { ?>				
-										<div class="doc-wrap">
 											<div class="doc-item">
-												<a href="<?php echo $image['full'] ?>" data-fancybox-group="group">		<img src="<?php echo $image['full'] ?>" alt="">
-												</a>
+											<?php 
+												$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "size" );
+											 ?>
+											<a class="doc" data-fancybox-group="group" href="<?php echo $thumbnail[0]; ?>"><?php 
+													the_post_thumbnail();
+													?></a><br/>
+													<a href="#">Скачать</a>
+												</div>
 											</div>
+											<?php if( class_exists('Dynamic_Featured_Image') ) { ?>
+											<?php global $dynamic_featured_image; ?>
+											<?php $featured_images = $dynamic_featured_image->get_featured_images( get_the_ID() ); ?>
+											<?php foreach( $featured_images as $image ) { ?>				
+											<div class="doc-wrap">
+												<div class="doc-item">
+													<a href="<?php echo $image['full'] ?>" data-fancybox-group="group">		<img src="<?php echo $image['full'] ?>" alt="">
+													</a>
+												</div>
+											</div>
+											<?php } ?>
+
+											<?php } ?>
+
 										</div>
-										<?php } ?>
 
 										<?php } ?>
-
-									</div>
-
-									<?php } ?>
 								<!-- <div class="docs clearfix">
 									<span class="box-descr">ОБРАЗЕЦ Приложения</span>
 									<div class="doc-wrap">
