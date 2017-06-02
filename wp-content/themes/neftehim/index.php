@@ -62,7 +62,7 @@
 					<input type="text" name="amountprod" placeholder="Требуемый объем продукта">
 					<input type="text" name="date" placeholder="Дата отгрузки">
 					<input type="text" name="contactface" placeholder="Контактное лицо">
-					<input type="text" name="contactinfo" placeholder="Контактная информация (E-mail, тел.)">
+					<input type="text" name="contactinfo" required="" placeholder="Контактная информация (E-mail, тел.)">
 					<textarea placeholder="Ваши комментарии" name="comment"></textarea>
 					<input type="submit" value="Отправить" name="submit">
 				</form>
@@ -73,15 +73,15 @@
 </div>
 			<div class="container">
 	<div class="news">		
-		<div class="news-item">
+		<!-- <div class="news-item">
 			<a href="#" class="news-item__caption">НАЗВАНИЕ НОВОСТИ</a>
 			<div class="news-item__img">
 				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/news-item2.jpg" alt=""></a>
 			</div>
 			<a href="#" class="news-item__txt">Nullam eget pharetra est, a pulvinar urna. Sed rutrum commodo dolor vel ullamcorper. Donec placerat ipsum non lacus congue gravida. Quisque lobortis tellus nec felis varius</a>
 			<span class="news-item__date">19.04.2107</span>
-		</div>
-	
+		</div> -->
+			<!-- 
 		<div class="news-item">
 			<a href="#" class="news-item__caption">ОЧЕНЬ ДЛИННОЕ НАЗВАНИЕ НОВОСТИ В ДВЕ ДЛИННЫХ, ДЛИННЫХ  СТРОЧКИ</a>
 			<div class="news-item__img">
@@ -99,7 +99,43 @@
 			</div>
 			<a href="#" class="news-item__txt">Vivamus dictum erat urna, id tincidunt turpis tempor nec. Phasellus ultrices sapien eget accumsan vehicula. Praesent metus mauris, placerat a odio vitae, fermentum sagittis diam. Vivamus vitae gravida ante. Duis et luctus nunc. Proin volutpat </a>
 			<span class="news-item__date">19.04.2107</span>
-		</div>			
+		</div>	 -->
+
+		<?php 
+			// задаем нужные нам критерии выборки данных из БД
+		$args = array(
+			'posts_per_page' => 3,
+			'orderby' => 'comment_count'
+			);
+
+		$query = new WP_Query( $args );
+
+// Цикл
+
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+			  ?>
+					
+			  <div class="news-item">
+			  	<a href="<?php the_permalink(); ?>" class="news-item__caption"><?php the_title(); ?></a>
+			  	<div class="news-item__img">
+			  		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+			  	</div>
+			  	<a href="<?php the_permalink(); ?>" class="news-item__txt"><?php  do_excerpt(get_the_excerpt(), 15); ?></a>
+			  	<span class="news-item__date"><?php the_time('d.m.Y'); ?></span>
+			  </div>
+
+				<?php
+			}
+		} else {
+	
+		}
+		
+		wp_reset_postdata();	
+
+		?>		
+		?>
 	</div>
 	<div class="clearfix"></div>
 </div>
