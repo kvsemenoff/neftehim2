@@ -8,9 +8,9 @@
 		<div class="product-section">
 			<div class="product-section__box">
 				<div class="product-section__img">
-					<a href="/category/katalog/parafino-voskovaya-produktsiya/"><img src="<?php echo get_template_directory_uri(); ?>/img/product1.jpg" alt=""></a>
+					<a href="/katalog/parafino-voskovaya-produktsiya/"><img src="<?php echo get_template_directory_uri(); ?>/img/product1.jpg" alt=""></a>
 				</div>
-				<a href="/category/katalog/parafino-voskovaya-produktsiya/" class="button-more button-more_width">
+				<a href="/katalog/parafino-voskovaya-produktsiya/" class="button-more button-more_width">
 					<span class="button-more__bg">
 						<span class="button-more__txt">ПАРАФИНО-ВОСКОВАЯ ПРОДУКЦИЯ </span>
 					</span>
@@ -18,9 +18,9 @@
 			</div>
 			<div class="product-section__box">
 				<div class="product-section__img">
-					<a href="/category/katalog/bitumy-i-mazuty/"><img src="<?php echo get_template_directory_uri(); ?>/img/product2.jpg" alt=""></a>
+					<a href="/katalog/bitumy-i-mazuty/"><img src="<?php echo get_template_directory_uri(); ?>/img/product2.jpg" alt=""></a>
 				</div>				
-				<a href="/category/katalog/bitumy-i-mazuty/" class="button-more button-more_width">
+				<a href="/katalog/bitumy-i-mazuty/" class="button-more button-more_width">
 					<span class="button-more__bg">
 						<span class="button-more__txt">БИТУМЫ И МАЗУТЫ</span>
 					</span>
@@ -28,9 +28,9 @@
 			</div>
 			<div class="product-section__box product-section__box_last">
 				<div class="product-section__img">
-					<a href="/category/katalog/neftehimiya/"><img src="<?php echo get_template_directory_uri(); ?>/img/product3.jpg" alt=""></a>
+					<a href="/katalog/neftehimiya/"><img src="<?php echo get_template_directory_uri(); ?>/img/product3.jpg" alt=""></a>
 				</div>				
-				<a href="/category/katalog/neftehimiya/" class="button-more button-more_width">
+				<a href="/katalog/neftehimiya/" class="button-more button-more_width">
 					<span class="button-more__bg">
 						<span class="button-more__txt">НЕФТЕХИМИЯ</span>
 					</span>
