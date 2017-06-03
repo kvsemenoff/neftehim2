@@ -19,7 +19,7 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-8 col-md-8">
 					<div class="header-box__left">
-						<a href="#"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt=""></a>
+						<a href="/"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt=""></a>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
@@ -38,13 +38,7 @@
 
 		<div class="menu__wrap">
 			<div class="container">
-				<!-- <ul class="main-menu">
-					<li><a href="#">главная</a></li>
-					<li><a href="#">направления деятельности</a></li>
-					<li><a href="#">продукция</a></li>
-					<li><a href="#">новости</a></li>
-					<li><a href="#">контакты</a></li>
-				</ul> -->
+				
 				<?php 
 				wp_nav_menu( array(
 					'theme_location'  => 'Main menu',
