@@ -136,7 +136,7 @@
 		wp_reset_postdata();	
 
 		?>		
-		?>
+		
 	</div>
 	<div class="clearfix"></div>
 </div>

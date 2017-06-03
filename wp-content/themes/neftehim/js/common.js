@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	$("head").append("<link href='//netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.css' rel='stylesheet'>");
+	
 	$(".js-phone").mask("+7 (999) 999 - 99 - 99?");
 	// Мобильное меню 
 	$(".fa-bars").click(function(m){
