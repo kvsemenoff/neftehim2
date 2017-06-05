@@ -55,7 +55,6 @@ Template name: Контакты
 		</div>
 	</div>
 </div>
-<div class="n-footer">
 	<?php get_footer(); ?>	
-</div>
+
 
