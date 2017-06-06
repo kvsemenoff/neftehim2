@@ -1,5 +1,9 @@
 <?php
-$to = "test@yandex.ru ";
+
+require( dirname(__FILE__) . '/wp-load.php' );
+$to = get_option( 'admin_email' ); 
+
+
 $phone = $_POST['phone'];
 $email = $_POST['email'];
 $uname = $_POST['uname'];
