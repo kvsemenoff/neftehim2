@@ -49,9 +49,9 @@ q:before, q:after {
 
 
 //font-family: 'Playfair Display', serif;
-body, html{
+html, body {
 	min-height:100%;
-	height: auto;
+	height: 100%;
 	font-family: Arial;
 	background-color: #fff;
 }
@@ -1269,4 +1269,8 @@ strong {
 	&:after{
 		width: 100%;
 	}
+}
+
+.current-menu-item a{
+	color:  #f57107 !important;
 }

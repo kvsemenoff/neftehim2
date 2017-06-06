@@ -44,9 +44,9 @@ q:before, q:after {
   content: '';
   content: none; }
 
-body, html {
+html, body {
   min-height: 100%;
-  height: auto;
+  height: 100%;
   font-family: Arial;
   background-color: #fff; }
 
@@ -1104,5 +1104,8 @@ input[type="submit"] {
   background-image: url("./img/arrow2.png"); }
   .button-more_active:after {
     width: 100%; }
+
+.current-menu-item a {
+  color: #f57107 !important; }
 
 /*# sourceMappingURL=style.css.map */
