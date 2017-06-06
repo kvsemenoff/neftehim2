@@ -9,7 +9,7 @@
 					<h1 class="h2"><?php the_title(); ?></h1>
 					<div class="content clearfix">						
 						<div class="img-wrap">
-							<img src="img/news-item4.jpg" alt="">
+							<?php the_post_thumbnail(); ?>
 						</div>
 
 						<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
