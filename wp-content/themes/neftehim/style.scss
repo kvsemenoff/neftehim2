@@ -947,9 +947,9 @@ strong {
 	}
 	.img-wrap{
 		float: right;
-		overflow: hidden;
-		width: 600px;
+		overflow: hidden;		
 		padding: 0 0 15px 15px;
+		max-width: 600px;
 		img{
 			display: block;
 			width: 100%;

@@ -834,8 +834,8 @@ input[type="submit"] {
   .news-page .img-wrap {
     float: right;
     overflow: hidden;
-    width: 600px;
-    padding: 0 0 15px 15px; }
+    padding: 0 0 15px 15px;
+    max-width: 600px; }
     .news-page .img-wrap img {
       display: block;
       width: 100%;
