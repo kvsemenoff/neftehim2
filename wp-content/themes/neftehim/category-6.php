@@ -3,14 +3,16 @@
 	<div class="n-content-inner vertical-align bitumsbgimg">	
 		<div class="container newsbg bitumsblock">				
 			<h1 class="h2 about__caption">Парафино-восковая продукция</h1>
+			<?php $cat= 6; ?>
 			<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
 			<?php $args = array(
-				'cat' => 6,
+				'cat' => $cat,
 				'paged' => $paged
 			);  ?>
 			<?php $query = new WP_Query($args); ?>
 			<?php  while ( $query->have_posts() ) { ?>
 			<?php  $query->the_post(); ?>
+			<?php $id = get_the_id(); ?>
 			<div class="product-item">
 				<h4 class="product-item__caption"><?php the_title(); ?></h4>	
 				<div class="product-item__txtbox">	
@@ -28,9 +30,9 @@
 							<?php $i=1; ?>
 							<?php foreach( $featured_images as $image ) { ?>				
 								<?php if ($i==1) { ?>
-									<a href="<?php echo $image['full'] ?>" data-fancybox-group="group" class="product-item__download">Посмотреть</a>
+									<a href="<?php echo $image['full'] ?>" data-fancybox-group="group<?php echo $id; ?>" class="product-item__download">Посмотреть</a>
 								<?php }else{ ?>
-									<a href="<?php echo $image['full'] ?>" data-fancybox-group="group" class="product-item__download hidden">Посмотреть</a>
+									<a href="<?php echo $image['full'] ?>" data-fancybox-group="group<?php echo $id; ?>" class="product-item__download hidden">Посмотреть</a>
 								<?php } ?>
 								<?php $i++; ?>
 							<?php } ?>

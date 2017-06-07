@@ -112,6 +112,25 @@ $(document).ready(function(){
 			return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
 		}
 	});
+	
+  
+    $('a[data-fancybox-group^="group"').each(function (index, elem) {
+      	var srcValue = $(elem).attr('data-fancybox-group');
+      	
+      	var newVal = 'a[data-fancybox-group='+srcValue+']';
+      	$(newVal).fancybox({
+			'transitionIn' : 'none',
+			'transitionOut' : 'none',
+			'titlePosition' : 'over',
+			'titleFormat' : function(title, currentArray, currentIndex, currentOpts) {
+				return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+			}
+		});
+    });
+
+	
+	
+
 });//END READY
 
 
