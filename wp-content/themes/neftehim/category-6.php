@@ -46,7 +46,17 @@
 				<div class="product-item__buttons">
 					<span class="product-item__pasport">Паспорта и сертификаты</span>
 					<div class="product-item__boxbuttons">
-						<a href="<?php the_permalink(); ?>" class="product-item__look">Посмотреть</a>
+						<?php if( class_exists('Dynamic_Featured_Image') ) { ?>
+						<?php global $dynamic_featured_image; ?>
+						<?php $featured_images = $dynamic_featured_image->get_featured_images( get_the_ID() ); ?>
+						<?php foreach( $featured_images as $image ) { ?>				
+						
+						<a href="<?php echo $image['full'] ?>" data-fancybox-group="group">		Посмотреть
+						</a>
+						
+						<?php } ?>
+						<?php } ?>
+						
 						<a href="<?php the_permalink(); ?>" class="product-item__download">Скачать</a>
 					</div>
 				</div>
