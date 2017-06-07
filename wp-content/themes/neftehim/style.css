@@ -1108,4 +1108,7 @@ input[type="submit"] {
 .current-menu-item a {
   color: #f57107 !important; }
 
+.hidden {
+  display: none; }
+
 /*# sourceMappingURL=style.css.map */
