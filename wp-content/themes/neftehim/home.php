@@ -78,7 +78,8 @@ Template Name: Главная страница
 			// задаем нужные нам критерии выборки данных из БД
 		$args = array(
 			'posts_per_page' => 3,
-			'orderby' => 'comment_count',
+			'orderby' => 'date', 
+			'order' => "DESC",
 			'cat' => '2'
 			);
 

@@ -6,7 +6,7 @@
 		
 			<div class="container">				
 				<div class="box">
-					<h1 class="h2"><?php the_title(); ?></h1>
+					<h1 class="h1"><?php the_title(); ?></h1>
 					<div class="content clearfix">						
 						<div class="img-wrap">
 							<?php the_post_thumbnail(); ?>
