@@ -37,7 +37,9 @@
 					<h4 class="product-item__caption"><?php the_title(); ?></h4>	
 					<div class="product-item__txtbox">	
 						<div class="product-item__img">
-							<?php the_post_thumbnail(); ?>			
+							<?php $image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full'); ?>
+							<a href="<?php echo $image_url[0]; ?>" class="single-image"><img src="<?php echo $image_url[0]; ?>" /></a>
+	
 						</div>		
 						<p><?php  do_excerpt(get_the_excerpt(), 13); ?></p>	
 					</div>
@@ -113,7 +115,9 @@
 					<h4 class="product-item__caption"><?php the_title(); ?></h4>	
 					<div class="product-item__txtbox">	
 						<div class="product-item__img">
-							<?php the_post_thumbnail(); ?>			
+							<?php $image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full'); ?>
+							<a href="<?php echo $image_url[0]; ?>" class="single-image"><img src="<?php echo $image_url[0]; ?>" /></a>
+		
 						</div>		
 						<p><?php  do_excerpt(get_the_excerpt(), 13); ?></p>	
 					</div>
@@ -188,7 +192,8 @@
 					<h4 class="product-item__caption"><?php the_title(); ?></h4>	
 					<div class="product-item__txtbox">	
 						<div class="product-item__img">
-							<?php the_post_thumbnail(); ?>		
+							<?php $image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full'); ?>
+							<a href="<?php echo $image_url[0]; ?>" class="single-image"></a><img src="<?php echo $image_url[0]; ?>" />
 						</div>		
 						<p><?php  do_excerpt(get_the_excerpt(), 13); ?>					
 						</p>	

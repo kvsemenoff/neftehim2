@@ -69,6 +69,7 @@ html, body {
 .n-content{
 	display:table-row;
 
+
 }
 .n-footer{
 	display:table-row;
@@ -321,7 +322,7 @@ textarea:-ms-input-placeholder      {color: #555;}
 	color: black;
 	font-family: Arial;
 	font-size: 12px;
-	font-weight: 400;
+	font-weight: 400 !important;
 	line-height: 20px;	
 	display: block;
 	text-decoration: none;
@@ -511,7 +512,6 @@ strong {
 }
 
 .footer{
-
 	padding: 14px 0;
 	font-size: 14px;
 	font-weight: 400;
@@ -1277,4 +1277,11 @@ strong {
 
 .hidden{
 	display: none;
+}
+
+.catalog-wrap .container{
+	margin-bottom: 20px;
+}
+.service-page p, .news-page p{
+	text-align: justify;
 }

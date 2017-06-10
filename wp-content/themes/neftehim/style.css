@@ -307,7 +307,7 @@ textarea:-ms-input-placeholder {
   color: black;
   font-family: Arial;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 400 !important;
   line-height: 20px;
   display: block;
   text-decoration: none;
@@ -1110,5 +1110,11 @@ input[type="submit"] {
 
 .hidden {
   display: none; }
+
+.catalog-wrap .container {
+  margin-bottom: 20px; }
+
+.service-page p, .news-page p {
+  text-align: justify; }
 
 /*# sourceMappingURL=style.css.map */

@@ -13,8 +13,12 @@
 
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-						<?php the_content(); ?>
-
+					<?php the_content(); ?>
+					
+					<div class="news-item__date">
+						<?php the_time('d.m.Y'); ?>	
+					</div>
+					
 
 					<?php endwhile; ?>
 				<?php else: ?>
