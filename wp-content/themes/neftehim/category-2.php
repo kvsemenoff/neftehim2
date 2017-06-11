@@ -3,7 +3,7 @@
 
 <div class="n-content-inner vertical-align newsbgimg">	
 	<div class="container newsbg">				
-		<h1 class="h2 about__caption">НОВОСТИ</h1>
+		<h1 class="h1 about__caption">НОВОСТИ</h1>
 		<div class="news">
 
 		
@@ -31,7 +31,7 @@
 			<?php }?>
 			<div class="clearfix"></div>
 			<div class="news-button">
-				<a href="#" class="button-more button-more_width">
+				<a href="/arhiv" class="button-more button-more_width">
 					<span class="button-more__bg">
 						<span class="button-more__txt">АРХИВ НОВОСТЕЙ</span>
 					</span>

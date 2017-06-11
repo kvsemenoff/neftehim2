@@ -6,6 +6,7 @@ Template Name: Главная страница
 
 
 <?php get_header(); ?>	
+
 	<div class="n-content">
 		<div class="n-content-inner vertical-align">	
 			<div class="container">

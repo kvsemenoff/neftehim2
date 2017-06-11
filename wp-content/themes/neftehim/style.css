@@ -1117,4 +1117,7 @@ input[type="submit"] {
 .service-page p, .news-page p {
   text-align: justify; }
 
+a, input {
+  outline: none !important; }
+
 /*# sourceMappingURL=style.css.map */
