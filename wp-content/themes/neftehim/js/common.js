@@ -130,7 +130,23 @@ $(document).ready(function(){
 
     $(".single-image").fancybox();
 	
+	$(".archive-pagination .next").html('');
+	$(".archive-pagination .next").addClass("pagination__btn pagination__btn_right");
+
+	$(".archive-pagination .prev").html('');
+	$(".archive-pagination .prev").addClass("pagination__btn pagination__btn_left");
+
+	var pagenumbers =  $(".archive-pagination .current").html();
+
 	
+	$(".archive-pagination .dots").html('');
+	$(".archive-pagination .page-numbers").html('');
+	$(".archive-pagination .current").html(pagenumbers);
+
+	$(".prev").parents('.pagination').css("width", "360px");
+	
+	
+
 
 });//END READY
 

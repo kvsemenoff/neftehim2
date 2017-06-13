@@ -25,6 +25,15 @@
 					</div>		
 					<p><?php  do_excerpt(get_the_excerpt(), 15); ?></p>	
 				</div>
+				<?php $k=0; ?>
+				<?php if( class_exists('Dynamic_Featured_Image') ) { ?>
+					<?php global $dynamic_featured_image; ?>
+					<?php $featured_images = $dynamic_featured_image->get_featured_images( get_the_ID() ); ?>
+					<?php foreach( $featured_images as $image ) { ?>				
+						<?php $k++; ?>
+					<?php } ?>
+				<?php } ?>
+				<?php if ($k > 0) { ?>
 				<div class="product-item__buttons">
 					<span class="product-item__pasport">Паспорта и сертификаты</span>
 					<div class="product-item__boxbuttons">
@@ -41,10 +50,13 @@
 								<?php $i++; ?>
 							<?php } ?>
 							<?php $file = get_field('файл'); ?>
-							<a href="<?php echo $file['url']; ?>" target="_blank" class="product-item__download">Скачать</a>
+							<?php if (trim($file['url']) !== "") { ?>
+								<a href="<?php echo $file['url']; ?>" download class="product-item__download">Скачать</a>
+							<?php } ?>
 						<?php } ?>
 					</div>
 				</div>
+				<?php } ?>
 				<div class="clearfix"></div>
 			</div>		
 			<?php }?>

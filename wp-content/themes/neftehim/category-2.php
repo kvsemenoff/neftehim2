@@ -30,13 +30,14 @@
 			
 			<?php }?>
 			<div class="clearfix"></div>
-			<div class="news-button">
-				<a href="/arhiv" class="button-more button-more_width">
-					<span class="button-more__bg">
-						<span class="button-more__txt">АРХИВ НОВОСТЕЙ</span>
-					</span>
-				</a>
+			<div class="archive-pagination">
+				<?php 
+				$nav = get_the_posts_pagination();
+				$nav = preg_replace('~<h2.*?h2>~', '', $nav);
+				echo $nav;	
+				?>	
 			</div>
+			
 		</div>
 	</div>
 </div>

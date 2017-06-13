@@ -84,7 +84,7 @@ html, body {
 	display:table-cell;
 }
 .vertical-align{
-	vertical-align:middle;
+	vertical-align:top;
 }
 
 a{
@@ -200,6 +200,13 @@ a:hover{
 
 
 .doc-item{
+	width: 165px;
+	height: 229px;
+	margin-bottom: 20px;
+	img{
+		width: 100%;
+		height: auto;
+	}
 	span{
 		display: inline-block;
 		color: #431f18;
@@ -811,7 +818,7 @@ strong {
 	}
 }
 .docs{
-	padding-bottom: 15px;
+	padding-bottom: 20px;
 }
 .doc-wrap{
 	float: left;
@@ -823,9 +830,15 @@ strong {
 	}
 }
 .archive-pagination{
-	width: 360px;
 	margin: 0 auto;
-	span{
+	text-align: center;
+	position: relative;
+	.pagination{
+		display: block;
+		width: 230px;
+		margin: 0 auto;
+	}
+	span, a{
 		text-align: center;
 		display: block;
 		float: left;
@@ -1271,7 +1284,7 @@ strong {
 	}
 }
 
-.current-menu-item a{
+.current-menu-item a, .current-menu-parent a{
 	color:  #f57107 !important;
 }
 
@@ -1287,4 +1300,17 @@ strong {
 }
 a, input{
 	outline: none !important;
+}
+textarea{
+	line-height: 18px;
+}
+
+.product-item__img{
+	width: 180px;
+	height: 120px;
+	overflow: hidden;
+	img{
+		width: 100%;
+		height: auto;
+	}
 }

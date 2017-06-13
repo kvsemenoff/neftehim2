@@ -41,28 +41,40 @@
 							<a href="<?php echo $image_url[0]; ?>" class="single-image"><img src="<?php echo $image_url[0]; ?>" /></a>
 	
 						</div>		
-						<p><?php  do_excerpt(get_the_excerpt(), 13); ?></p>	
+						<p><?php  echo get_the_content(); ?></p>	
 					</div>
+					<?php $k=0; ?>
+					<?php if( class_exists('Dynamic_Featured_Image') ) { ?>
+						<?php global $dynamic_featured_image; ?>
+						<?php $featured_images = $dynamic_featured_image->get_featured_images( get_the_ID() ); ?>
+						<?php foreach( $featured_images as $image ) { ?>				
+							<?php $k++; ?>
+						<?php } ?>
+					<?php } ?>
+					<?php if ($k > 0) { ?>
 					<div class="product-item__buttons">
 						<span class="product-item__pasport">Паспорта и сертификаты</span>
 						<div class="product-item__boxbuttons">
 							<?php if( class_exists('Dynamic_Featured_Image') ) { ?>
-							<?php global $dynamic_featured_image; ?>
-							<?php $featured_images = $dynamic_featured_image->get_featured_images( get_the_ID() ); ?>
-							<?php $i=1; ?>
-							<?php foreach( $featured_images as $image ) { ?>				
-								<?php if ($i==1) { ?>
-									<a href="<?php echo $image['full'] ?>" data-fancybox-group="group<?php echo $id; ?>" class="product-item__download">Посмотреть</a>
-								<?php }else{ ?>
-									<a href="<?php echo $image['full'] ?>" data-fancybox-group="group<?php echo $id; ?>" class="product-item__download hidden">Посмотреть</a>
+								<?php global $dynamic_featured_image; ?>
+								<?php $featured_images = $dynamic_featured_image->get_featured_images( get_the_ID() ); ?>
+								<?php $i=1; ?>
+								<?php foreach( $featured_images as $image ) { ?>				
+									<?php if ($i==1) { ?>
+										<a href="<?php echo $image['full'] ?>" data-fancybox-group="group<?php echo $id; ?>" class="product-item__download">Посмотреть</a>
+									<?php }else{ ?>
+										<a href="<?php echo $image['full'] ?>" data-fancybox-group="group<?php echo $id; ?>" class="product-item__download hidden">Посмотреть</a>
+									<?php } ?>
+									<?php $i++; ?>
 								<?php } ?>
-								<?php $i++; ?>
-							<?php } ?>
-							<?php $file = get_field('файл'); ?>
-							<a href="<?php echo $file['url']; ?>" target="_blank" class="product-item__download">Скачать</a>
+								<?php $file = get_field('файл'); ?>
+								<?php if (trim($file['url']) !== "") { ?>
+									<a href="<?php echo $file['url']; ?>" download class="product-item__download">Скачать</a>
+								<?php } ?>
 							<?php } ?>
 						</div>
 					</div>
+					<?php } ?>
 					<div class="clearfix"></div>
 				</div>
 
@@ -119,28 +131,40 @@
 							<a href="<?php echo $image_url[0]; ?>" class="single-image"><img src="<?php echo $image_url[0]; ?>" /></a>
 		
 						</div>		
-						<p><?php  do_excerpt(get_the_excerpt(), 13); ?></p>	
+						<p><?php  echo get_the_content(); ?></p>	
 					</div>
+					<?php $k=0; ?>
+					<?php if( class_exists('Dynamic_Featured_Image') ) { ?>
+						<?php global $dynamic_featured_image; ?>
+						<?php $featured_images = $dynamic_featured_image->get_featured_images( get_the_ID() ); ?>
+						<?php foreach( $featured_images as $image ) { ?>				
+							<?php $k++; ?>
+						<?php } ?>
+					<?php } ?>
+					<?php if ($k > 0) { ?>
 					<div class="product-item__buttons">
 						<span class="product-item__pasport">Паспорта и сертификаты</span>
 						<div class="product-item__boxbuttons">
 							<?php if( class_exists('Dynamic_Featured_Image') ) { ?>
-							<?php global $dynamic_featured_image; ?>
-							<?php $featured_images = $dynamic_featured_image->get_featured_images( get_the_ID() ); ?>
-							<?php $i=1; ?>
-							<?php foreach( $featured_images as $image ) { ?>				
-								<?php if ($i==1) { ?>
-									<a href="<?php echo $image['full'] ?>" data-fancybox-group="group<?php echo $id; ?>" class="product-item__download">Посмотреть</a>
-								<?php }else{ ?>
-									<a href="<?php echo $image['full'] ?>" data-fancybox-group="group<?php echo $id; ?>" class="product-item__download hidden">Посмотреть</a>
+								<?php global $dynamic_featured_image; ?>
+								<?php $featured_images = $dynamic_featured_image->get_featured_images( get_the_ID() ); ?>
+								<?php $i=1; ?>
+								<?php foreach( $featured_images as $image ) { ?>				
+									<?php if ($i==1) { ?>
+										<a href="<?php echo $image['full'] ?>" data-fancybox-group="group<?php echo $id; ?>" class="product-item__download">Посмотреть</a>
+									<?php }else{ ?>
+										<a href="<?php echo $image['full'] ?>" data-fancybox-group="group<?php echo $id; ?>" class="product-item__download hidden">Посмотреть</a>
+									<?php } ?>
+									<?php $i++; ?>
 								<?php } ?>
-								<?php $i++; ?>
-							<?php } ?>
-							<?php $file = get_field('файл'); ?>
-							<a href="<?php echo $file['url']; ?>" target="_blank" class="product-item__download">Скачать</a>
+								<?php $file = get_field('файл'); ?>
+								<?php if (trim($file['url']) !== "") { ?>
+									<a href="<?php echo $file['url']; ?>" download class="product-item__download">Скачать</a>
+								<?php } ?>
 							<?php } ?>
 						</div>
 					</div>
+					<?php } ?>
 					<div class="clearfix"></div>
 				</div>
 
@@ -195,29 +219,40 @@
 							<?php $image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full'); ?>
 							<a href="<?php echo $image_url[0]; ?>" class="single-image"></a><img src="<?php echo $image_url[0]; ?>" />
 						</div>		
-						<p><?php  do_excerpt(get_the_excerpt(), 13); ?>					
-						</p>	
+						<p><?php  echo get_the_content(); ?></p>	
 					</div>
+					<?php $k=0; ?>
+					<?php if( class_exists('Dynamic_Featured_Image') ) { ?>
+						<?php global $dynamic_featured_image; ?>
+						<?php $featured_images = $dynamic_featured_image->get_featured_images( get_the_ID() ); ?>
+						<?php foreach( $featured_images as $image ) { ?>				
+							<?php $k++; ?>
+						<?php } ?>
+					<?php } ?>
+					<?php if ($k > 0) { ?>
 					<div class="product-item__buttons">
 						<span class="product-item__pasport">Паспорта и сертификаты</span>
 						<div class="product-item__boxbuttons">
 							<?php if( class_exists('Dynamic_Featured_Image') ) { ?>
-							<?php global $dynamic_featured_image; ?>
-							<?php $featured_images = $dynamic_featured_image->get_featured_images( get_the_ID() ); ?>
-							<?php $i=1; ?>
-							<?php foreach( $featured_images as $image ) { ?>				
-								<?php if ($i==1) { ?>
-									<a href="<?php echo $image['full'] ?>" data-fancybox-group="group<?php echo $id; ?>" class="product-item__download">Посмотреть</a>
-								<?php }else{ ?>
-									<a href="<?php echo $image['full'] ?>" data-fancybox-group="group<?php echo $id; ?>" class="product-item__download hidden">Посмотреть</a>
+								<?php global $dynamic_featured_image; ?>
+								<?php $featured_images = $dynamic_featured_image->get_featured_images( get_the_ID() ); ?>
+								<?php $i=1; ?>
+								<?php foreach( $featured_images as $image ) { ?>				
+									<?php if ($i==1) { ?>
+										<a href="<?php echo $image['full'] ?>" data-fancybox-group="group<?php echo $id; ?>" class="product-item__download">Посмотреть</a>
+									<?php }else{ ?>
+										<a href="<?php echo $image['full'] ?>" data-fancybox-group="group<?php echo $id; ?>" class="product-item__download hidden">Посмотреть</a>
+									<?php } ?>
+									<?php $i++; ?>
 								<?php } ?>
-								<?php $i++; ?>
-							<?php } ?>
-							<?php $file = get_field('файл'); ?>
-							<a href="<?php echo $file['url']; ?>" target="_blank" class="product-item__download">Скачать</a>
+								<?php $file = get_field('файл'); ?>
+								<?php if (trim($file['url']) !== "") { ?>
+									<a href="<?php echo $file['url']; ?>" download class="product-item__download">Скачать</a>
+								<?php } ?>
 							<?php } ?>
 						</div>
 					</div>
+					<?php } ?>
 					<div class="clearfix"></div>
 				</div>
 
